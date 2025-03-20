@@ -1,0 +1,814 @@
+/* Genel Stiller */
+:root {
+    /* Light Theme Variables */
+    --primary-color: #2962ff;
+    --secondary-color: #0039cb;
+    --success-color: #2e7d32;
+    --warning-color: #ff6d00;
+    --danger-color: #d32f2f;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --border-color: #eee;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --primary-color: #64b5f6;
+    --secondary-color: #42a5f5;
+    --success-color: #81c784;
+    --warning-color: #ffb74d;
+    --danger-color: #e57373;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: #333;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Theme Specific Styles */
+[data-theme="dark"] body {
+    background: var(--background-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-bottom: none;
+}
+
+[data-theme="dark"] .table {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .table th {
+    background: var(--card-background);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .table td {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+    background: var(--card-background);
+}
+
+[data-theme="dark"] .table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .table tbody tr:hover td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .table .text-success {
+    color: #81c784 !important;
+}
+
+[data-theme="dark"] .table .text-danger {
+    color: #e57373 !important;
+}
+
+[data-theme="dark"] .table .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .table small {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .table strong {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .table img {
+    filter: brightness(1.2);
+}
+
+[data-theme="dark"] .form-control {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--card-background);
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-select {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-select:focus {
+    background-color: var(--card-background);
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-floating > label {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .alert {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .alert-success {
+    background: linear-gradient(45deg, #1b5e20, #2e7d32);
+    color: white;
+}
+
+[data-theme="dark"] .alert-warning {
+    background: linear-gradient(45deg, #e65100, #ff6d00);
+    color: white;
+}
+
+[data-theme="dark"] .alert-danger {
+    background: linear-gradient(45deg, #b71c1c, #d32f2f);
+    color: white;
+}
+
+[data-theme="dark"] .tradingview-widget-container {
+    background: var(--card-background);
+}
+
+[data-theme="dark"] .list-group-item {
+    background: var(--card-background);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background: var(--card-background);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-content {
+    background: var(--card-background);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-footer {
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .small {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .lead {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .display-4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .welcome-card {
+    background: linear-gradient(135deg, var(--card-background), var(--background-color));
+}
+
+[data-theme="dark"] .quick-access .card {
+    background: linear-gradient(135deg, var(--card-background), var(--background-color));
+}
+
+[data-theme="dark"] .market-summary .card {
+    background: linear-gradient(135deg, var(--card-background), var(--background-color));
+}
+
+[data-theme="dark"] .summary-item {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .summary-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .summary-content h6 {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .summary-content p {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.theme-toggle i {
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Navbar Stilleri */
+.navbar {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white !important;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    padding: 8px 15px;
+    margin: 0 5px;
+    position: relative;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+}
+
+/* Kart Stilleri */
+.card {
+    background: var(--card-background);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    padding: 1.25rem;
+    border-bottom: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-header h5 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-header.bg-success {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20) !important;
+}
+
+.card-header.bg-info {
+    background: linear-gradient(135deg, #0288d1, #01579b) !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Tablo Stilleri */
+.table {
+    margin-bottom: 0;
+    animation: slideIn 0.5s ease-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.table-responsive {
+    max-height: 600px; /* Maksimum yükseklik */
+    overflow-y: auto; /* Dikey scroll */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+.table th {
+    position: sticky; /* Başlıkları sabitle */
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.table tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table thead th {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 500;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0,0,0,0.02);
+    transform: scale(1.01);
+}
+
+/* Form Stilleri */
+.form-control {
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    border: 2px solid #eee;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-rgb), 0.25);
+    transform: translateY(-2px);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Buton Stilleri */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #0288d1, #01579b);
+    border: none;
+    color: white;
+}
+
+.btn-info:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Grafik Stilleri */
+canvas {
+    border-radius: var(--border-radius);
+    background: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Footer Stilleri */
+footer {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    padding: 40px 0;
+    margin-top: 4rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer h5 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer a {
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.3rem 0;
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+/* Duyarlı Tasarım */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .table td, .table th {
+        padding: 0.75rem;
+    }
+    
+    footer {
+        text-align: center;
+    }
+    
+    footer .text-md-end {
+        text-align: center !important;
+        margin-top: 2rem;
+    }
+    
+    .table-responsive {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Özel Sınıflar */
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.last-update {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Alert Stilleri */
+.alert {
+    animation: slideIn 0.3s ease-out;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    border: none;
+}
+
+.alert-warning {
+    background: linear-gradient(45deg, #ffc107, #ffb007);
+    color: white;
+    border: none;
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+}
+
+/* Özel scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* TradingView Chart Styles */
+.tradingview-widget-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.tradingview-widget-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.tradingview-widget-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Responsive Chart */
+@media (max-width: 768px) {
+    .tradingview-widget-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tradingview-widget-container {
+        height: 300px;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive Chart */
+@media (max-width: 768px) {
+    .tradingview-widget-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tradingview-widget-container {
+        height: 300px;
+    }
+}
+
+/* Market Summary Styles */
+.market-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0,0,0,0.02);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.summary-item:hover {
+    background: rgba(0,0,0,0.05);
+    transform: translateX(5px);
+}
+
+.summary-item i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.summary-content h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.summary-content p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Quick Converter Styles */
+.form-floating {
+    margin-bottom: 1rem;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
+}
+
+.form-floating > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    overflow: hidden;
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+    transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+/* Table Improvements */
+.table .currency-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Button Improvements */
+.btn i {
+    margin-right: 0.5rem;
+} 

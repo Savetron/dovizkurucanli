@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Döviz Kurları - Finans Platformu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Navigasyon -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-graph-up"></i> Finans Platformu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Araçlar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="doviz-cevirici.html">Döviz Çevirici</a></li>
+                            <li><a class="dropdown-item" href="kripto-cevirici.html">Kripto Çevirici</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="canli-doviz.html">Canlı Döviz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kripto-piyasa.html">Kripto Piyasa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Döviz Kurları Tablosu -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header bg-success">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0 text-white"><i class="bi bi-currency-exchange"></i> Canlı Döviz Kurları</h4>
+                            <small id="lastUpdate" class="text-white-50"></small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Para Birimi</th>
+                                        <th>Güncel Kur</th>
+                                        <th>Değişim</th>
+                                        <th>Son Güncelleme</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="exchangeRatesTable">
+                                    <!-- JavaScript ile doldurulacak -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Döviz Grafiği -->
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-graph-up me-2"></i>Döviz Kuru Grafiği
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="tradingview-widget-container">
+                                <div id="tradingview_chart"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                <script type="text/javascript">
+                                    new TradingView.widget({
+                                        "width": "100%",
+                                        "height": 500,
+                                        "symbol": "FX:USDTRY",
+                                        "interval": "D",
+                                        "timezone": "Europe/Istanbul",
+                                        "theme": "light",
+                                        "style": "1",
+                                        "locale": "tr",
+                                        "toolbar_bg": "#f1f3f6",
+                                        "enable_publishing": false,
+                                        "allow_symbol_change": true,
+                                        "container_id": "tradingview_chart"
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yan Panel -->
+            <div class="col-lg-4">
+                <!-- Hızlı Dönüştürücü -->
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="bi bi-calculator"></i> Hızlı Dönüştürücü</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="quickAmount" value="1" min="0" step="0.01">
+                            <label for="quickAmount">Miktar</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="quickCurrency">
+                                <!-- JavaScript ile doldurulacak -->
+                            </select>
+                            <label for="quickCurrency">Para Birimi</label>
+                        </div>
+                        <div class="alert alert-info">
+                            <div id="quickResult" class="text-center h5 mb-0"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piyasa Özeti -->
+                <div class="card mt-3">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="bi bi-info-circle"></i> Piyasa Özeti</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                En Yüksek Değişim
+                                <span id="highestChange" class="badge bg-success rounded-pill"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                En Düşük Değişim
+                                <span id="lowestChange" class="badge bg-danger rounded-pill"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Ortalama Değişim
+                                <span id="averageChange" class="badge bg-primary rounded-pill"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bilgi Kartı -->
+                <div class="card mt-3">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="bi bi-lightbulb"></i> Bilgi</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Döviz kurları 5 dakikada bir güncellenmektedir. Veriler dünya genelindeki forex piyasalarından alınmaktadır.</p>
+                        <a href="doviz-cevirici.html" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-calculator"></i> Detaylı Döviz Çevirici
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-graph-up"></i> Finans Platformu</h5>
+                    <p>Güncel döviz ve kripto para bilgileri için güvenilir kaynağınız.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Hızlı Bağlantılar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="doviz-cevirici.html" class="text-white"><i class="bi bi-chevron-right"></i> Döviz Çevirici</a></li>
+                        <li><a href="kripto-cevirici.html" class="text-white"><i class="bi bi-chevron-right"></i> Kripto Çevirici</a></li>
+                        <li><a href="canli-doviz.html" class="text-white"><i class="bi bi-chevron-right"></i> Canlı Döviz</a></li>
+                        <li><a href="kripto-piyasa.html" class="text-white"><i class="bi bi-chevron-right"></i> Kripto Piyasa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+    <button class="theme-toggle" id="themeToggle">
+        <i class="bi bi-moon-stars"></i>
+    </button>
+</body>
+</html> 

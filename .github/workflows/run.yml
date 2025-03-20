@@ -1,0 +1,83 @@
+name: Publish-Currencies
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for branch 1 and on start directory, command.txt file changes or by manually running the workflow from actions tab
+on:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
+
+  workflow_dispatch:
+  
+env: # Or as an environment variable
+  currlink: ${{ secrets.CURRLINK }}
+  currlink2: ${{ secrets.CURRLINK2 }}
+  currlink3: ${{ secrets.CURRLINK3 }}
+  currlink3key: ${{ secrets.CURRLINK3KEY }}
+  cryptolink: ${{ secrets.CRYPTOLINK }}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21.6.2'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install swapspace -y
+          npm i
+          npx playwright install --with-deps
+          
+      - name: Running the command
+        id: run-command
+        continue-on-error: true
+        run: node currscript.js
+
+      - name: Rerun the command if previous failed
+        if: ${{ steps.run-command.outcome == 'failure' }}
+        run: node currscript.js
+
+      - name: Set date today
+        run: |
+          echo "date_today=`date -uI`" >> "$GITHUB_ENV"
+          echo "date_today_semver=`node semver-date.js`" >> "$GITHUB_ENV"
+
+      - name: Generate tarball
+        run: |
+          7z a package.tar package -ttar
+          7z a package.tar.gz package.tar -tgzip -mx=9 -aoa -mfb=258 -mmt=on
+
+      - name: publish
+        run: |
+          npm publish --access public package.tar.gz
+          npm dist-tag add @fawazahmed0/currency-api@${{ env.date_today_semver }} ${{ env.date_today }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Deploy to cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: |
+           pages deploy --project-name=currency-api package
+           pages deploy --project-name=currency-api --branch=latest package
+           pages deploy --project-name=currency-api --branch=${{ env.date_today }} package
+
+
+#      - name: unpublish older version
+#        run: npm unpublish @fawazahmed0/currency-api@`date -d "94 days ago" -I | tr '-' '.'`
+#        env:
+#            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
