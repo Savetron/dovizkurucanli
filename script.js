@@ -356,22 +356,66 @@ async function loadLiveRates() {
         table.innerHTML = '';
         
         // Popüler para birimleri
-        const popularCurrencies = ['USD', 'EUR', 'GBP', 'JPY', 'CHF', 'AUD', 'CAD', 'CNY'];
+        const popularCurrencies = ['USD', 'EUR', 'GBP', 'JPY', 'CHF', 'AUD', 'CAD', 'CNY', 'AED', 'RUB'];
         
         // Her para birimi için tablo satırı oluştur
         popularCurrencies.forEach(currency => {
             const rate = data.rates[currency];
             if (rate) {
                 const row = document.createElement('tr');
-                const change = calculateChange(); // Rastgele değişim yüzdesi
+                const change = ((Math.random() * 2) - 1).toFixed(2); // Örnek değişim yüzdesi
+                const changeClass = parseFloat(change) >= 0 ? 'text-success' : 'text-danger';
+                const changeIcon = parseFloat(change) >= 0 ? '↑' : '↓';
+                
+                // Para birimi adını belirle
+                const currencyNames = {
+                    'USD': 'Amerikan Doları',
+                    'EUR': 'Euro',
+                    'GBP': 'İngiliz Sterlini',
+                    'JPY': 'Japon Yeni',
+                    'CHF': 'İsviçre Frangı',
+                    'AUD': 'Avustralya Doları',
+                    'CAD': 'Kanada Doları',
+                    'CNY': 'Çin Yuanı',
+                    'AED': 'BAE Dirhemi',
+                    'RUB': 'Rus Rublesi'
+                };
+
+                // Ülke kodunu belirle
+                const countryCode = {
+                    'USD': 'us',
+                    'EUR': 'eu',
+                    'GBP': 'gb',
+                    'JPY': 'jp',
+                    'CHF': 'ch',
+                    'AUD': 'au',
+                    'CAD': 'ca',
+                    'CNY': 'cn',
+                    'AED': 'ae',
+                    'RUB': 'ru'
+                };
                 
                 row.innerHTML = `
-                    <td><strong>${currency}</strong></td>
-                    <td>1 ${currency} = ${(1/rate).toFixed(4)} TRY</td>
-                    <td class="${change >= 0 ? 'text-success' : 'text-danger'}">
-                        ${change >= 0 ? '+' : ''}${change.toFixed(2)}%
+                    <td>
+                        <img src="https://flagcdn.com/24x18/${countryCode[currency]}.png"
+                             width="24"
+                             height="18"
+                             class="me-2"
+                             alt="${currency}">
+                        <strong>${currency}</strong>
+                        <br>
+                        <small class="text-muted">${currencyNames[currency]}</small>
                     </td>
-                    <td>${new Date().toLocaleString('tr-TR')}</td>
+                    <td>
+                        <strong>${(1/rate).toFixed(4)}</strong>
+                        <small class="text-muted">₺</small>
+                    </td>
+                    <td class="${changeClass}">
+                        ${changeIcon} ${Math.abs(change)}%
+                    </td>
+                    <td>
+                        <small>${new Date().toLocaleTimeString('tr-TR')}</small>
+                    </td>
                 `;
                 
                 table.appendChild(row);
@@ -383,9 +427,6 @@ async function loadLiveRates() {
         if (lastUpdate) {
             lastUpdate.textContent = `Son Güncelleme: ${new Date().toLocaleString('tr-TR')}`;
         }
-        
-        // Para birimi seçeneklerini güncelle
-        loadCurrencyOptions();
         
     } catch (error) {
         console.error('Döviz kurları yüklenirken hata:', error);
@@ -530,6 +571,56 @@ function updateThemeIcon(theme) {
     }
 }
 
+// Popüler kurları yükle
+async function loadPopularRates() {
+    try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/TRY');
+        const data = await response.json();
+        
+        const popularCurrencies = ['USD', 'EUR', 'GBP', 'JPY', 'CHF'];
+        const popularRatesTable = document.getElementById('popularRatesTable');
+        
+        if (popularRatesTable) {
+            let html = '';
+            popularCurrencies.forEach(currency => {
+                const rate = 1 / data.rates[currency]; // TRY cinsinden kur hesaplama
+                const change = ((Math.random() * 2) - 1).toFixed(2); // Örnek değişim yüzdesi
+                const changeClass = parseFloat(change) >= 0 ? 'text-success' : 'text-danger';
+                const changeIcon = parseFloat(change) >= 0 ? '↑' : '↓';
+                
+                html += `
+                    <tr>
+                        <td>
+                            <img src="https://flagcdn.com/24x18/${currency.toLowerCase() === 'usd' ? 'us' : 
+                                                         currency.toLowerCase() === 'eur' ? 'eu' : 
+                                                         currency.toLowerCase() === 'gbp' ? 'gb' : 
+                                                         currency.toLowerCase() === 'jpy' ? 'jp' : 'ch'}.png"
+                                 width="24"
+                                 height="18"
+                                 class="me-2"
+                                 alt="${currency}">
+                            <strong>${currency}</strong>
+                        </td>
+                        <td>${rate.toFixed(4)} ₺</td>
+                        <td class="${changeClass}">
+                            ${changeIcon} ${Math.abs(change)}%
+                        </td>
+                    </tr>
+                `;
+            });
+            popularRatesTable.innerHTML = html;
+            
+            // Son güncelleme zamanını güncelle
+            const lastUpdate = document.getElementById('lastUpdate');
+            if (lastUpdate) {
+                lastUpdate.textContent = `Son Güncelleme: ${new Date().toLocaleTimeString('tr-TR')}`;
+            }
+        }
+    } catch (error) {
+        console.error('Popüler kurlar yüklenirken hata:', error);
+    }
+}
+
 // Sayfa yüklendiğinde gerekli fonksiyonları çağır
 document.addEventListener('DOMContentLoaded', () => {
     initTheme(); // Tema başlatma fonksiyonunu çağır
@@ -555,6 +646,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Her 1 dakikada bir güncelle
         setInterval(loadCryptoMarket, 60 * 1000);
     }
+
+    // Popüler kurları yükle ve her 1 dakikada bir güncelle
+    loadPopularRates();
+    setInterval(loadPopularRates, 60000);
 });
 
 // Input değişikliklerinde otomatik çeviri

@@ -53,10 +53,11 @@
 }
 
 [data-theme="dark"] .table th {
-    background: var(--card-background);
-    color: var(--text-primary);
-    border-color: var(--border-color);
-    font-weight: 600;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 500;
 }
 
 [data-theme="dark"] .table td {
@@ -272,6 +273,9 @@ body {
     background: var(--background-color);
     color: var(--text-primary);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar Stilleri */
@@ -322,6 +326,10 @@ body {
     border-radius: var(--border-radius);
 }
 
+.nav-link i {
+    margin-right: 5px;
+}
+
 /* Kart Stilleri */
 .card {
     background: var(--card-background);
@@ -332,11 +340,12 @@ body {
     margin-bottom: 2rem;
     animation: fadeIn 0.5s ease-out;
     font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .card-header {
@@ -374,8 +383,8 @@ body {
 }
 
 .table-responsive {
-    max-height: 600px; /* Maksimum yükseklik */
-    overflow-y: auto; /* Dikey scroll */
+    max-height: 600px;
+    overflow-y: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -399,7 +408,7 @@ body {
 }
 
 .table th {
-    position: sticky; /* Başlıkları sabitle */
+    position: sticky;
     top: 0;
     z-index: 1;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
@@ -413,28 +422,10 @@ body {
 .table td {
     padding: 1rem;
     vertical-align: middle;
-    border-bottom: 1px solid #eee;
-}
-
-.table tr:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-}
-
-.table thead th {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    border: none;
-    padding: 15px;
-    font-weight: 500;
-}
-
-.table tbody tr {
-    transition: all 0.2s ease;
 }
 
 .table tbody tr:hover {
     background-color: rgba(0,0,0,0.02);
-    transform: scale(1.01);
 }
 
 /* Form Stilleri */
@@ -478,27 +469,22 @@ body {
 .btn-primary {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border: none;
-    padding: 0.75rem 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
 }
 
-.btn-primary:hover {
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.btn-info {
-    background: linear-gradient(135deg, #0288d1, #01579b);
+.btn-warning {
+    background: linear-gradient(45deg, var(--warning-color), #ff9800);
     border: none;
     color: white;
 }
 
-.btn-info:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-warning {
+    border: 2px solid var(--warning-color);
+    color: var(--warning-color);
 }
 
 /* Grafik Stilleri */
@@ -514,7 +500,7 @@ footer {
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: white;
     padding: 40px 0;
-    margin-top: 4rem;
+    margin-top: auto;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -537,11 +523,12 @@ footer a {
     padding: 0.3rem 0;
     opacity: 0.7;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
 footer a:hover {
     color: white;
-    text-decoration: none;
+    opacity: 1;
     transform: translateX(5px);
 }
 
@@ -576,13 +563,25 @@ footer a:hover {
 
 /* Animasyonlar */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes pulse {
@@ -811,4 +810,48 @@ footer a:hover {
 /* Button Improvements */
 .btn i {
     margin-right: 0.5rem;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.welcome-card h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.welcome-card .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .welcome-card {
+        padding: 2rem 1rem;
+    }
+    
+    .welcome-card h1 {
+        font-size: 2rem;
+    }
+    
+    .welcome-card .lead {
+        font-size: 1.1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .table-responsive {
+        max-height: 400px;
+    }
 } 
