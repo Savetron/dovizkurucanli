@@ -1,70 +1,70 @@
-<h1 align="center">Free Currency Exchange Rates API</h1> 
+# Canlı Döviz Kuru
 
-<p align="center">
-  <img width="460" height="300" src="https://github.com/fawazahmed0/exchange-api/raw/main/money.jpg">
-</p>
+Canlı Döviz Kuru, Türkiye'deki güncel döviz kurlarını ve kripto para bilgilerini anlık olarak sunan kapsamlı bir finans platformudur. Kullanıcılar dolar, euro ve diğer döviz kurlarını takip edebilir, kripto para çevirici kullanabilir ve kripto para piyasasındaki son gelişmeleri inceleyebilir.
 
-[![Publish-Currencies](https://github.com/fawazahmed0/exchange-api/actions/workflows/run.yml/badge.svg)](https://github.com/fawazahmed0/exchange-api/actions/workflows/run.yml)
+## 🌟 Özellikler
 
+- **Anlık Döviz Kurları**: Dolar, Euro ve diğer döviz kurlarını gerçek zamanlı takip edin
+- **Kripto Para Çevirici**: Kripto paraları birbirine veya fiat para birimlerine çevirin
+- **Kripto Para Piyasası**: En popüler kripto paraların güncel fiyatlarını ve piyasa verilerini görüntüleyin
+- **Mobil Uyumlu**: Tüm cihazlarda sorunsuz çalışan responsive tasarım
+- **Kullanıcı Dostu**: Kolay kullanılabilir ve anlaşılır arayüz
+- **Güvenilir Veriler**: Güncel ve doğru finansal veriler
 
-#### Features:
-- Free & Blazing Fast response
-- No Rate limits
-- 200+ Currencies, Including Common Cryptocurrencies & Metals
-- Daily Updated
+## 🛠️ Kullanılan Teknolojiler
 
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
+- Google Analytics
+- Google AdSense
 
-#### URL Structure:
+## 🚀 Kurulum
 
-`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{date}/{apiVersion}/{endpoint}`
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/Savetron/dovizkurucanli.git
+```
 
-#### Formats:
+2. Proje dizinine gidin:
+```bash
+cd dovizkurucanli
+```
 
-`date`
+3. `index.html` dosyasını bir web tarayıcısında açın veya bir yerel sunucu kullanın:
+```bash
+python3 -m http.server 8000
+```
 
-The date should either be `latest` or in `YYYY-MM-DD` format <br>
+4. Tarayıcınızda `http://localhost:8000` adresine gidin
 
-The Endpoints Supports HTTP GET Method and returns the data in two formats:
+## 📱 Kullanım
 
-`/{endpoint}.json`
+- Ana sayfada güncel döviz kurlarını görüntüleyin
+- "Canlı Döviz Kurları" sayfasından detaylı döviz bilgilerine ulaşın
+- "Kripto Para Çevirici" ile kripto para dönüşümleri yapın
+- "Kripto Para Piyasası" sayfasından kripto para verilerini takip edin
 
-`/{endpoint}.min.json`
+## 🌐 Canlı Demo
 
+Projeyi canlı olarak görüntülemek için: [dovizkurucanli.com](https://dovizkurucanli.com)
 
-#### Endpoints:
+## 🤝 Katkıda Bulunma
 
-- `/currencies`<br>
-> Lists all the available currencies in prettified json format:<br>
- https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json <br>
+1. Bu depoyu fork edin
+2. Yeni bir özellik dalı oluşturun (`git checkout -b yeni-ozellik`)
+3. Değişikliklerinizi commit edin (`git commit -am 'Yeni özellik eklendi'`)
+4. Dalınıza push yapın (`git push origin yeni-ozellik`)
+5. Bir Pull Request oluşturun
 
-> Get a minified version of it:<br>
-https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.min.json <br>
+## 📄 Lisans
 
-- `/currencies/{currencyCode}`<br>
-> Get the currency list with EUR as base currency:<br>
-https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json <br>
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-> Get the currency list with EUR as base currency on date 2024-03-06:<br>
-https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-06/v1/currencies/eur.json <br>
+## 📞 İletişim
 
-> Get the currency list with BTC as base currency:<br>
-https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/btc.json <br>
-
-> Get the currency list with BTC as base currency in minified format:<br>
-https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/btc.min.json <br>
-
-#### Additional Fallback URL on Cloudflare: 
-
-`https://{date}.currency-api.pages.dev/{apiVersion}/{endpoint}`
-
-> Get the currency list with EUR as base currency:<br>
-https://latest.currency-api.pages.dev/v1/currencies/eur.json
-
-> Get the currency list with EUR as base currency on date 2024-03-06:<br>
-https://2024-03-06.currency-api.pages.dev/v1/currencies/eur.json
-
-**Warning:** Please include [Fallback mechanism](https://github.com/fawazahmed0/exchange-api/issues/90#issue-2168885277) in your code, for example if `cdn.jsdelivr.net` link fails, fetch from `currency-api.pages.dev`
-
-**Migrating from Previous Currency API:** [Read this](https://github.com/fawazahmed0/exchange-api/blob/main/MIGRATION.md)
+- Website: [dovizkurucanli.com](https://dovizkurucanli.com)
+- GitHub: [@Savetron](https://github.com/Savetron)
 
 
