@@ -16,15 +16,29 @@
     <meta name="keywords" content="canlı döviz kuru, anlık döviz kuru, dolar kaç tl, euro kaç tl, bitcoin kaç tl, kripto para piyasa">
     <meta name="author" content="Finans Platformu">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Finans Platformu - Döviz ve Kripto Para Platformu">
-    <meta property="og:description" content="Canlı döviz kurları, kripto para çevirici, döviz çevirici ve güncel finans bilgileri">
-    <meta property="og:image" content="money.jpg">
-    <meta property="og:url" content="https://harikafinans.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://candovizkuru.com/">
+    <meta property="og:title" content="Canlı Döviz Kuru - Anlık Döviz ve Kripto Para Bilgileri">
+    <meta property="og:description" content="Güncel döviz kurları, kripto para çevirici ve anlık finans bilgileri">
+    <meta property="og:image" content="https://candovizkuru.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://candovizkuru.com/">
+    <meta property="twitter:title" content="Canlı Döviz Kuru">
+    <meta property="twitter:description" content="Güncel döviz kurları, kripto para çevirici ve anlık finans bilgileri">
+    <meta property="twitter:image" content="https://candovizkuru.com/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://candovizkuru.com/">
+    
     <meta name="google-adsense-account" content="ca-pub-8020765633962496">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8020765633962496"
      crossorigin="anonymous"></script>
     <title>Canlı Döviz Kuru - Anlık Döviz ve Kripto Para Bilgileri</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -78,33 +92,30 @@
         </div>
     </nav>
 
-    <!-- Ana İçerik -->
-    <div class="container mt-4">
-        <!-- Hoşgeldiniz Kartı -->
-        <div class="welcome-card card mb-4">
-            <div class="card-body text-center py-5">
-                <h1 class="display-4 mb-4">Finans Dünyasına Hoş Geldiniz</h1>
-                <p class="lead mb-4">Canlı döviz kurları, kripto para çevirici ve daha fazlası...</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="pages/doviz-cevirici.html" class="btn btn-primary btn-lg">
-                        <i class="bi bi-calculator"></i> Döviz Çevirici
-                    </a>
-                    <a href="pages/kripto-cevirici.html" class="btn btn-warning btn-lg">
-                        <i class="bi bi-currency-bitcoin"></i> Kripto Çevirici
-                    </a>
-                </div>
+    <!-- Hero Section -->
+    <div class="hero-section text-center py-5 bg-primary text-white">
+        <div class="container">
+            <h1 class="display-4 mb-3">Finans Dünyasına Hoş Geldiniz</h1>
+            <p class="lead mb-4">Canlı döviz kurları, kripto para çevirici ve daha fazlası...</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="pages/doviz-cevirici.html" class="btn btn-light btn-lg">
+                    <i class="bi bi-calculator"></i> Döviz Çevirici
+                </a>
+                <a href="pages/kripto-cevirici.html" class="btn btn-warning btn-lg">
+                    <i class="bi bi-currency-bitcoin"></i> Kripto Çevirici
+                </a>
             </div>
         </div>
+    </div>
 
+    <!-- Ana İçerik -->
+    <div class="container mt-5">
         <div class="row">
-            <!-- Popüler Kurlar -->
-            <div class="col-lg-8">
+            <div class="col-md-8">
                 <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0"><i class="bi bi-star-fill me-2"></i>Popüler Kurlar</h5>
-                        <small id="lastUpdate" class="text-muted">Son Güncelleme: ...</small>
-                    </div>
                     <div class="card-body">
+                        <h2 class="card-title">Güncel Döviz Kurları</h2>
+                        <p class="card-text">Türkiye'deki güncel döviz kurlarını anlık olarak takip edin. Dolar, Euro ve diğer para birimlerinin TL karşılıklarını görüntüleyin.</p>
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
@@ -119,29 +130,68 @@
                                 </tbody>
                             </table>
                         </div>
+                        <small id="lastUpdate" class="text-muted">Son Güncelleme: ...</small>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Piyasa Analizi</h2>
+                        <p class="card-text">Güncel piyasa analizleri ve döviz kurlarındaki son değişimler hakkında detaylı bilgiler.</p>
+                        <div class="tradingview-widget-container">
+                            <div id="tradingview_chart"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                            <script type="text/javascript">
+                                new TradingView.widget({
+                                    "width": "100%",
+                                    "height": 500,
+                                    "symbol": "FX:USDTRY",
+                                    "interval": "D",
+                                    "timezone": "Europe/Istanbul",
+                                    "theme": "light",
+                                    "style": "1",
+                                    "locale": "tr",
+                                    "toolbar_bg": "#f1f3f6",
+                                    "enable_publishing": false,
+                                    "allow_symbol_change": true,
+                                    "container_id": "tradingview_chart"
+                                });
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Döviz Çevirici</h3>
+                        <p class="card-text">Hızlı ve kolay döviz çevirimi yapın. Tüm para birimleri arasında anlık dönüşüm yapabilirsiniz.</p>
+                        <div class="d-grid">
+                            <a href="pages/canli-doviz.html" class="btn btn-primary">Döviz Çevirici</a>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Hızlı Erişim -->
-            <div class="col-lg-4">
-                <div class="quick-access">
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white">
-                            <h5 class="card-title mb-0">
-                                <i class="bi bi-lightning-charge"></i> Hızlı Erişim
-                            </h5>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Kripto Para Piyasası</h3>
+                        <p class="card-text">Bitcoin, Ethereum ve diğer kripto paraların güncel fiyatlarını ve piyasa verilerini takip edin.</p>
+                        <div class="d-grid">
+                            <a href="pages/kripto-piyasa.html" class="btn btn-primary">Kripto Piyasa</a>
                         </div>
-                        <div class="card-body">
-                            <div class="d-grid gap-3">
-                                <a href="pages/canli-doviz.html" class="btn btn-outline-primary">
-                                    <i class="bi bi-graph-up"></i> Canlı Döviz Kurları
-                                </a>
-                                <a href="pages/kripto-piyasa.html" class="btn btn-outline-warning">
-                                    <i class="bi bi-currency-bitcoin"></i> Kripto Para Piyasası
-                                </a>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Neden Canlı Döviz Kuru?</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ Anlık ve güncel döviz kurları</li>
+                            <li class="mb-2">✓ Güvenilir veri kaynakları</li>
+                            <li class="mb-2">✓ Kullanıcı dostu arayüz</li>
+                            <li class="mb-2">✓ Ücretsiz hizmet</li>
+                            <li class="mb-2">✓ Mobil uyumlu tasarım</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -169,14 +219,13 @@
                     <h5>İletişim</h5>
                     <ul class="list-unstyled">
                         <li><a href="pages/hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="#">Gizlilik Politikası</a></li>
-                        <li><a href="#">Kullanım Şartları</a></li>
+                        <li><a href="pages/gizlilik-politikasi.html">Gizlilik Politikası</a></li>
                     </ul>
                 </div>
             </div>
             <hr class="mt-4">
             <div class="text-center">
-                <p class="mb-0">&copy; 2024 Finans Platformu. Tüm hakları saklıdır.</p>
+                <p class="mb-0">&copy; 2025 Canlı Döviz Kuru Projesi. İrony Agency Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>

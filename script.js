@@ -21,24 +21,42 @@ async function fetchRates() {
         const data = await response.json();
         
         const popularCurrencies = ['USD', 'EUR', 'GBP', 'JPY', 'CHF', 'AUD', 'CAD'];
-        const popularRatesTable = document.getElementById('popularRatesTable');
+        const dovizKurlariTable = document.getElementById('dovizKurlariTable');
         const lastUpdate = document.getElementById('lastUpdate');
         
-        if (popularRatesTable) {
-            popularRatesTable.innerHTML = '';
+        // Ülke kodları
+        const countryCodes = {
+            'USD': 'us',
+            'EUR': 'eu',
+            'GBP': 'gb',
+            'JPY': 'jp',
+            'CHF': 'ch',
+            'AUD': 'au',
+            'CAD': 'ca'
+        };
+        
+        if (dovizKurlariTable) {
+            dovizKurlariTable.innerHTML = '';
             popularCurrencies.forEach(currency => {
                 const rate = 1 / data.rates[currency];
                 const change = calculateChange(currency, rate);
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${currency}</td>
-                    <td>1 ${currency} = ${rate.toFixed(4)} TRY</td>
+                    <td>
+                        <img src="https://flagcdn.com/24x18/${countryCodes[currency]}.png"
+                             width="24"
+                             height="18"
+                             class="me-2"
+                             alt="${currency}">
+                        ${currency}
+                    </td>
+                    <td>${rate.toFixed(4)}</td>
+                    <td>${(rate * 1.001).toFixed(4)}</td>
                     <td class="${change >= 0 ? 'text-success' : 'text-danger'}">
                         ${change >= 0 ? '+' : ''}${change.toFixed(2)}%
                     </td>
-                    <td>${new Date().toLocaleTimeString('tr-TR')}</td>
                 `;
-                popularRatesTable.appendChild(row);
+                dovizKurlariTable.appendChild(row);
             });
         }
         
@@ -621,12 +639,64 @@ async function loadPopularRates() {
     }
 }
 
-// Sayfa yüklendiğinde gerekli fonksiyonları çağır
-document.addEventListener('DOMContentLoaded', () => {
-    initTheme(); // Tema başlatma fonksiyonunu çağır
-    // Ana sayfadaki kurları yükle
+// Kripto para verilerini çek
+async function fetchCryptoRates() {
+    try {
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,ripple,cardano,solana,polkadot,dogecoin,avalanche-2,polygon&vs_currencies=usd&include_24hr_change=true');
+        const data = await response.json();
+        
+        const popularCryptoTable = document.getElementById('popularCryptoTable');
+        if (popularCryptoTable) {
+            popularCryptoTable.innerHTML = '';
+            
+            Object.entries(data).forEach(([crypto, info]) => {
+                const row = document.createElement('tr');
+                const change = info.usd_24h_change;
+                const changeClass = change >= 0 ? 'text-success' : 'text-danger';
+                
+                row.innerHTML = `
+                    <td>
+                        <strong>${formatCryptoName(crypto)}</strong>
+                        <br>
+                        <small class="text-muted">${crypto.toUpperCase()}</small>
+                    </td>
+                    <td>$${info.usd.toLocaleString()}</td>
+                    <td class="${changeClass}">
+                        ${change >= 0 ? '+' : ''}${change.toFixed(2)}%
+                    </td>
+                `;
+                popularCryptoTable.appendChild(row);
+            });
+        }
+    } catch (error) {
+        console.error('Kripto para verileri yüklenirken hata:', error);
+    }
+}
+
+// Kripto para adını formatla
+function formatCryptoName(crypto) {
+    const cryptoNames = {
+        'bitcoin': 'Bitcoin',
+        'ethereum': 'Ethereum',
+        'binancecoin': 'Binance Coin',
+        'ripple': 'Ripple',
+        'cardano': 'Cardano',
+        'solana': 'Solana',
+        'polkadot': 'Polkadot',
+        'dogecoin': 'Dogecoin',
+        'avalanche-2': 'Avalanche',
+        'polygon': 'Polygon'
+    };
+    return cryptoNames[crypto] || crypto.charAt(0).toUpperCase() + crypto.slice(1);
+}
+
+// Sayfa yüklendiğinde çalışacak fonksiyonlar
+document.addEventListener('DOMContentLoaded', function() {
+    // Döviz kurlarını yükle
     fetchRates();
-    setInterval(fetchRates, 300000); // Her 5 dakikada bir güncelle
+    
+    // Her 1 dakikada bir kurları güncelle
+    setInterval(fetchRates, 60000);
 
     // Canlı döviz sayfasındaki kurları yükle
     loadLiveRates();
@@ -650,6 +720,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Popüler kurları yükle ve her 1 dakikada bir güncelle
     loadPopularRates();
     setInterval(loadPopularRates, 60000);
+
+    // Kripto para verilerini çek
+    fetchCryptoRates();
+    // Her 5 dakikada bir güncelle
+    setInterval(fetchCryptoRates, 300000);
 });
 
 // Input değişikliklerinde otomatik çeviri

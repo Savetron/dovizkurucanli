@@ -854,4 +854,33 @@ footer a:hover {
     .table-responsive {
         max-height: 400px;
     }
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #2563eb 100%);
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-section .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-2px);
 } 
