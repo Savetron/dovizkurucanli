@@ -12,13 +12,13 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Canlı kripto para piyasası verileri. Bitcoin, Ethereum ve diğer altcoinlerin anlık fiyatlarını, 24 saatlik değişimlerini, hacimlerini ve piyasa değerlerini takip edin."> {/* Description güncellendi */}
-    <meta name="keywords" content="kripto para piyasası, canlı kripto fiyatları, bitcoin fiyatı, ethereum fiyatı, altcoin fiyatları, kripto piyasa değeri, canlı döviz kuru"> {/* Keywords güncellendi */}
+    <meta name="description" content="Canlı kripto para piyasası verileri. Bitcoin, Ethereum ve diğer altcoinlerin anlık fiyatlarını, 24 saatlik değişimlerini, hacimlerini ve piyasa değerlerini takip edin.">
+    <meta name="keywords" content="kripto para piyasası, canlı kripto fiyatları, bitcoin fiyatı, ethereum fiyatı, altcoin fiyatları, kripto piyasa değeri, canlı döviz kuru">
     <meta name="google-adsense-account" content="ca-pub-8020765633962496">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8020765633962496"
      crossorigin="anonymous"></script>
     <title>Kripto Para Piyasası - Canlı Döviz Kuru | Anlık Kripto Para Bilgileri</title>
-    <link rel="icon" type="image/png" href="../favicon.png"> {/* Favicon düzeltildi */}
+    <link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../style.css">
@@ -34,7 +34,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                 <ul class="navbar-nav ms-auto"> {/* ms-auto eklendi */}
+                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html"><i class="bi bi-house-door"></i> Ana Sayfa</a>
                     </li>
@@ -48,10 +48,10 @@
                         <a class="nav-link" href="canli-doviz.html"><i class="bi bi-graph-up"></i> Canlı Döviz</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="kripto-piyasa.html"><i class="bi bi-coin"></i> Kripto Piyasa</a> {/* Active sınıfı düzeltildi, ikon eklendi */}
+                        <a class="nav-link active" href="kripto-piyasa.html"><i class="bi bi-coin"></i> Kripto Piyasa</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a> {/* Blog eklendi */}
+                        <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="hakkimizda.html"><i class="bi bi-info-circle"></i> Hakkımızda</a>
@@ -65,26 +65,26 @@
     <div class="container mt-4">
         <div class="row">
             <!-- Kripto Para Tablosu -->
-            <div class="col-lg-9"> {/* Genişlik ayarlandı */}
-                <div class="card shadow-sm"> {/* Gölge eklendi */}
-                    <div class="card-header bg-warning text-dark"> {/* Renk değiştirildi */}
+            <div class="col-lg-9">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-warning text-dark">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h1 class="h4 mb-0"><i class="bi bi-table"></i> Kripto Para Piyasası</h1> {/* Başlık seviyesi ve ikon değiştirildi */}
-                            <small id="lastUpdate" class="text-dark-emphasis"></small> {/* Renk değiştirildi */}
+                            <h1 class="h4 mb-0"><i class="bi bi-table"></i> Kripto Para Piyasası</h1>
+                            <small id="lastUpdate" class="text-dark-emphasis"></small>
                         </div>
                     </div>
                     <div class="card-body">
-                         <p class="card-text mb-4">Popüler kripto paraların anlık fiyatlarını, piyasa değerlerini ve 24 saatlik değişimlerini takip edin.</p> {/* Açıklama eklendi */}
+                         <p class="card-text mb-4">Popüler kripto paraların anlık fiyatlarını, piyasa değerlerini ve 24 saatlik değişimlerini takip edin.</p>
                         <div class="table-responsive">
-                            <table class="table table-hover table-striped"> {/* Striped eklendi */}
+                            <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Kripto Para</th>
                                         <th scope="col">Fiyat (TRY)</th>
                                         <th scope="col" class="text-center">24s Değişim</th>
-                                        <th scope="col" class="d-none d-md-table-cell">24s Hacim (TRY)</th> {/* Gizlendi mobilde */}
-                                        <th scope="col" class="d-none d-lg-table-cell">Piyasa Değeri (TRY)</th> {/* Gizlendi mobilde/tablette */}
+                                        <th scope="col" class="d-none d-md-table-cell">24s Hacim (TRY)</th>
+                                        <th scope="col" class="d-none d-lg-table-cell">Piyasa Değeri (TRY)</th>
                                     </tr>
                                 </thead>
                                 <tbody id="cryptoTable">
@@ -97,24 +97,24 @@
                 </div>
 
                 <!-- TradingView Grafiği -->
-                <div class="card mt-4 shadow-sm"> {/* Gölge eklendi */}
+                <div class="card mt-4 shadow-sm">
                     <div class="card-header bg-primary text-white">
                         <h2 class="h5 card-title mb-0">
                             <i class="bi bi-graph-up me-2"></i>Fiyat Grafiği (BTC/USDT)
                         </h2>
                     </div>
                     <div class="card-body">
-                        <div class="tradingview-widget-container" style="height:500px;"> {/* Yükseklik stile taşındı */}
+                        <div class="tradingview-widget-container" style="height:500px;">
                             <div id="tradingview_chart" style="height:100%;"></div>
                             <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                             <script type="text/javascript">
                                 new TradingView.widget({
                                     "width": "100%",
-                                    "height": "100%", // Yükseklik %100 yapıldı
-                                    "symbol": "BINANCE:BTCUSDT", // Varsayılan sembol
+                                    "height": "100%",
+                                    "symbol": "BINANCE:BTCUSDT",
                                     "interval": "D",
                                     "timezone": "Europe/Istanbul",
-                                    "theme": document.body.classList.contains('dark-theme') ? "dark" : "light", // Tema dinamik yapıldı
+                                    "theme": document.body.classList.contains('dark-theme') ? "dark" : "light",
                                     "style": "1",
                                     "locale": "tr",
                                     "toolbar_bg": "#f1f3f6",
@@ -129,43 +129,41 @@
             </div>
 
             <!-- Yan Panel -->
-            <div class="col-lg-3"> {/* Genişlik ayarlandı */}
+            <div class="col-lg-3">
                 <!-- Market Özeti -->
-                <div class="card shadow-sm"> {/* Gölge eklendi */}
-                    <div class="card-header bg-info text-white"> {/* Renk değiştirildi */}
-                        <h3 class="h5 mb-0"><i class="bi bi-bar-chart-line-fill"></i> Market Özeti</h3> {/* Başlık seviyesi değiştirildi */}
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h3 class="h5 mb-0"><i class="bi bi-bar-chart-line-fill"></i> Market Özeti</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0"> {/* Padding kaldırıldı */}
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 <small>Toplam Market Değeri</small>
                                 <span id="totalMarketCap" class="badge bg-primary rounded-pill">Yükleniyor...</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 <small>24s Toplam Hacim</small>
-                                <span id="total24hVolume" class="badge bg-secondary rounded-pill">Yükleniyor...</span> {/* Renk değiştirildi */}
+                                <span id="total24hVolume" class="badge bg-secondary rounded-pill">Yükleniyor...</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 <small>BTC Dominansı</small>
-                                <span id="btcDominance" class="badge bg-warning text-dark rounded-pill">Yükleniyor...</span> {/* Renk değiştirildi */}
+                                <span id="btcDominance" class="badge bg-warning text-dark rounded-pill">Yükleniyor...</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                {/* En İyi Performans kaldırıldı, daha sade */}
-
                 <!-- Hızlı İşlemler -->
-                <div class="card mt-3 shadow-sm"> {/* Gölge eklendi */}
-                    <div class="card-header bg-secondary text-white"> {/* Renk değiştirildi */}
-                        <h3 class="h5 mb-0"><i class="bi bi-lightning-fill"></i> Hızlı İşlemler</h3> {/* Başlık seviyesi değiştirildi */}
+                <div class="card mt-3 shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h3 class="h5 mb-0"><i class="bi bi-lightning-fill"></i> Hızlı İşlemler</h3>
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">
-                            <a href="kripto-cevirici.html" class="btn btn-outline-warning"> {/* Renk değiştirildi */}
+                            <a href="kripto-cevirici.html" class="btn btn-outline-warning">
                                 <i class="bi bi-calculator"></i> Kripto Para Çevirici
                             </a>
-                            <button class="btn btn-outline-info" onclick="refreshCryptoData()"> {/* Renk değiştirildi, fonksiyon adı değişebilir */}
+                            <button class="btn btn-outline-info" onclick="refreshCryptoData()">
                                 <i class="bi bi-arrow-clockwise"></i> Verileri Yenile
                             </button>
                         </div>
@@ -183,21 +181,21 @@
                     <h5>Canlı Döviz Kuru</h5>
                     <p>Güncel döviz ve kripto para bilgileri için güvenilir kaynağınız.</p>
                 </div>
-                 <div class="col-md-3"> {/* Genişlik ayarlandı */}
+                 <div class="col-md-3">
                     <h5>Hızlı Bağlantılar</h5>
                     <ul class="list-unstyled">
                         <li><a href="doviz-cevirici.html">Döviz Çevirici</a></li>
                         <li><a href="kripto-cevirici.html">Kripto Çevirici</a></li>
                         <li><a href="canli-doviz.html">Canlı Döviz</a></li>
                         <li><a href="kripto-piyasa.html">Kripto Piyasa</a></li>
-                        <li><a href="blog.html">Blog</a></li> {/* Blog eklendi */}
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3"> {/* Genişlik ayarlandı */}
+                <div class="col-md-3">
                     <h5>Diğer</h5>
                     <ul class="list-unstyled">
                         <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li> {/* Gizlilik Politikası eklendi */}
+                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
                     </ul>
                 </div>
             </div>
@@ -214,7 +212,6 @@
     </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    {/* Chart.js kaldırıldı */}
     <script src="../script.js"></script>
     <script>
         // Sayfa yüklendiğinde kripto piyasa verilerini yükle
