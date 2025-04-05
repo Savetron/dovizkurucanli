@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z0C76HSPTJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z0C76HSPTJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta description ve title JavaScript ile dinamik olarak eklenecek -->
+    <meta name="description" content="Canlı Döviz Kuru Blog Yazısı">
+    <title>Blog Yazısı - Canlı Döviz Kuru</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+    <!-- Gerekirse kod blokları için stil dosyası eklenebilir -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"> -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-currency-exchange me-2"></i>Canlı Döviz Kuru
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doviz-cevirici.html"><i class="bi bi-calculator"></i> Döviz Çevirici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kripto-cevirici.html"><i class="bi bi-currency-bitcoin"></i> Kripto Çevirici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="canli-doviz.html"><i class="bi bi-graph-up"></i> Canlı Döviz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kripto-piyasa.html"><i class="bi bi-coin"></i> Kripto Piyasa</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hakkimizda.html"><i class="bi bi-info-circle"></i> Hakkımızda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Yazısı İçeriği -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <article id="blogPostContent">
+                    <!-- Yazı başlığı ve içeriği buraya JavaScript ile yüklenecek -->
+                    <h1 id="postTitle">Yazı Yükleniyor...</h1>
+                    <p id="postDate" class="text-muted"><small>...</small></p>
+                    <hr>
+                    <div id="postBody">
+                        <p>İçerik yükleniyor...</p>
+                    </div>
+                </article>
+                <div class="mt-5">
+                    <a href="blog.html" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Tüm Yazılara Dön</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Canlı Döviz Kuru</h5>
+                    <p>Güncel döviz ve kripto para bilgileri için güvenilir kaynağınız.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Hızlı Bağlantılar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="doviz-cevirici.html">Döviz Çevirici</a></li>
+                        <li><a href="kripto-cevirici.html">Kripto Çevirici</a></li>
+                        <li><a href="canli-doviz.html">Canlı Döviz</a></li>
+                        <li><a href="kripto-piyasa.html">Kripto Piyasa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Diğer</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Canlı Döviz Kuru Projesi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tema Değiştirme Butonu -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="bi bi-moon-stars"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Marked.js (Markdown -> HTML) kütüphanesi -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Ana script (tema vb. için) -->
+    <script src="../script.js"></script>
+    <!-- Blog listeleme ve yazı yükleme script'i -->
+    <script src="../blog.js"></script>
+</body>
+</html>

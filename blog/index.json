@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "ilk-yazimiz",
+    "title": "İlk Blog Yazımız: Finans Dünyasına Giriş",
+    "date": "2025-04-06",
+    "summary": "Finans dünyasının karmaşık gibi görünen konularını basit ve anlaşılır bir dille ele alıyoruz. Neden finans okuryazarlığı önemli ve blogumuzda neler bulacaksınız?",
+    "markdownFile": "ilk-yazimiz.md"
+  },
+  {
+    "slug": "doviz-kurlari-nedir",
+    "title": "Döviz Kurları Nedir ve Nasıl Çalışır?",
+    "date": "2025-04-07",
+    "summary": "Döviz kuru tanımı, kurların neden sürekli değiştiği ve bu değişimleri etkileyen başlıca faktörler (arz-talep, faiz, enflasyon vb.) hakkında temel bilgiler.",
+    "markdownFile": "doviz-kurlari-nedir.md"
+  }
+]
