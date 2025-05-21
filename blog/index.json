@@ -12,5 +12,12 @@
     "date": "2025-04-07",
     "summary": "Döviz kuru tanımı, kurların neden sürekli değiştiği ve bu değişimleri etkileyen başlıca faktörler (arz-talep, faiz, enflasyon vb.) hakkında temel bilgiler.",
     "markdownFile": "doviz-kurlari-nedir.md"
+  },
+  {
+    "slug": "bitcoin-doviz-iliskisi",
+    "title": "Bitcoin ve Diğer Döviz Kurları Arasındaki İlişki Nasıl Yorumlanır?",
+    "date": "2025-05-22",
+    "summary": "Bitcoin ve geleneksel döviz kurları arasındaki karmaşık ilişkiyi, fiyatları etkileyen faktörleri ve yatırımcıların dikkat etmesi gerekenleri inceliyoruz.",
+    "markdownFile": "bitcoin-doviz-iliskisi.md"
   }
 ]
