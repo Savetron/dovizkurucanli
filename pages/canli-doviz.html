@@ -95,90 +95,97 @@
 
     <!-- Main Content -->
     <div class="section">
-        <div style="display:grid;grid-template-columns:1fr 320px;gap:1.5rem;">
-            <!-- Table -->
-            <div>
-                <div class="data-table-wrapper animate-in">
-                    <div class="data-table-toolbar">
-                        <div class="data-table-search">
-                            <i class="bi bi-search"></i>
-                            <input type="text" id="tableSearch" placeholder="Para birimi ara...">
-                        </div>
-                        <div class="data-table-info">
-                            <span class="pulse-dot"></span>
-                            <span id="lastUpdate">Guncelleniyor...</span>
-                        </div>
-                    </div>
-                    <div style="overflow-x: auto;">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th style="width:40px;"></th>
-                                    <th>Para Birimi</th>
-                                    <th>Alis (TL)</th>
-                                    <th>Satis (TL)</th>
-                                    <th>Degisim</th>
-                                    <th>Saat</th>
-                                </tr>
-                            </thead>
-                            <tbody id="dovizKurlariTable">
-                                <tr><td colspan="6" style="text-align:center;padding:3rem;">
-                                    <div class="skeleton skeleton-text--lg" style="margin:0 auto;"></div>
-                                </td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <!-- Table -->
+        <div class="data-table-wrapper animate-in">
+            <div class="data-table-toolbar">
+                <div class="data-table-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="tableSearch" placeholder="Para birimi ara...">
                 </div>
-
-                <!-- About Section -->
-                <div class="card-v2 animate-in" style="margin-top:1.5rem;">
-                    <div class="card-v2__body">
-                        <h2 style="font-size:var(--font-size-lg);font-weight:600;margin:0 0 0.75rem;">Doviz Piyasasi Hakkinda</h2>
-                        <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);line-height:1.7;margin:0;">
-                            Doviz piyasasi, farkli ulkelerin para birimlerinin alinip satildigi global bir piyasadir.
-                            Doviz kurlari, ulkelerin ekonomik durumlari, merkez bankalarinin politikalari ve global piyasa kosullarina gore surekli degismektedir.
-                            Bu sayfada en cok takip edilen para birimlerinin Turk Lirasi karsisindaki guncel degerleri anlik olarak gosterilmektedir.
-                        </p>
-                    </div>
+                <div class="data-table-info">
+                    <span class="pulse-dot"></span>
+                    <span id="lastUpdate">Guncelleniyor...</span>
                 </div>
             </div>
+            <div style="overflow-x: auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width:40px;"></th>
+                            <th>Para Birimi</th>
+                            <th>Alis (TL)</th>
+                            <th>Satis (TL)</th>
+                            <th>Degisim</th>
+                            <th>Saat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dovizKurlariTable">
+                        <tr><td colspan="6" style="text-align:center;padding:3rem;">
+                            <div class="skeleton skeleton-text--lg" style="margin:0 auto;"></div>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <!-- Sidebar -->
-            <div>
-                <div class="card-v2 animate-in" style="margin-bottom:1.5rem;">
-                    <div class="card-v2__body">
-                        <h3 style="font-size:var(--font-size-base);font-weight:600;margin:0 0 1rem;">
-                            <i class="bi bi-calculator" style="color:var(--color-primary-light);"></i> Hizli Cevirici
-                        </h3>
-                        <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin:0 0 1rem;">
-                            Para birimleri arasinda anlik donusum yapin.
-                        </p>
-                        <a href="doviz-cevirici.html" class="btn-header-cta btn-header-cta--primary" style="width:100%;justify-content:center;padding:0.65rem;">
-                            <i class="bi bi-arrow-left-right"></i> Doviz Ceviriciye Git
-                        </a>
-                    </div>
+        <!-- Chart - Full width below table -->
+        <div class="chart-panel animate-in" style="margin-top:1.5rem;">
+            <div class="chart-panel__header">
+                <h2 class="chart-panel__title"><i class="bi bi-graph-up" style="color:var(--color-primary-light);"></i> USD/TRY Grafigi</h2>
+            </div>
+            <div class="chart-panel__body" id="tradingview_doviz"></div>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            if (document.getElementById('tradingview_doviz')) {
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": "FX:USDTRY",
+                    "interval": "D",
+                    "timezone": "Europe/Istanbul",
+                    "theme": localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
+                    "style": "1",
+                    "locale": "tr",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_doviz"
+                });
+            }
+        </script>
+
+        <!-- Info Cards Row -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
+            <div class="card-v2 animate-in">
+                <div class="card-v2__body">
+                    <h3 style="font-size:var(--font-size-base);font-weight:600;margin:0 0 0.75rem;">
+                        <i class="bi bi-info-circle" style="color:var(--color-primary-light);"></i> Doviz Piyasasi Hakkinda
+                    </h3>
+                    <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);line-height:1.7;margin:0;">
+                        Doviz piyasasi, farkli ulkelerin para birimlerinin alinip satildigi global bir piyasadir.
+                        Doviz kurlari, ulkelerin ekonomik durumlari, merkez bankalarinin politikalari ve global piyasa kosullarina gore surekli degismektedir.
+                    </p>
                 </div>
-
-                <div class="card-v2 animate-in">
-                    <div class="card-v2__body">
-                        <h3 style="font-size:var(--font-size-base);font-weight:600;margin:0 0 1rem;">
-                            <i class="bi bi-lightbulb" style="color:var(--color-warning);"></i> Piyasa Ipuclari
-                        </h3>
-                        <ul style="list-style:none;padding:0;margin:0;">
-                            <li style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);border-bottom:1px solid var(--color-border-light);">
-                                <i class="bi bi-check-circle-fill" style="color:var(--color-success);"></i> Piyasayi duzenli takip edin
-                            </li>
-                            <li style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);border-bottom:1px solid var(--color-border-light);">
-                                <i class="bi bi-check-circle-fill" style="color:var(--color-success);"></i> Ekonomik gostergeleri inceleyin
-                            </li>
-                            <li style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);border-bottom:1px solid var(--color-border-light);">
-                                <i class="bi bi-check-circle-fill" style="color:var(--color-success);"></i> Risk yonetimi yapin
-                            </li>
-                            <li style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);">
-                                <i class="bi bi-check-circle-fill" style="color:var(--color-success);"></i> Guvenilir kaynaklari takip edin
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="card-v2 animate-in">
+                <div class="card-v2__body">
+                    <h3 style="font-size:var(--font-size-base);font-weight:600;margin:0 0 0.75rem;">
+                        <i class="bi bi-lightbulb" style="color:var(--color-warning);"></i> Piyasa Ipuclari
+                    </h3>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--color-success);flex-shrink:0;"></i> Piyasayi duzenli takip edin
+                        </li>
+                        <li style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--color-success);flex-shrink:0;"></i> Ekonomik gostergeleri inceleyin
+                        </li>
+                        <li style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--color-success);flex-shrink:0;"></i> Risk yonetimi yapin
+                        </li>
+                        <li style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;font-size:var(--font-size-sm);color:var(--color-text-secondary);">
+                            <i class="bi bi-check-circle-fill" style="color:var(--color-success);flex-shrink:0;"></i> Guvenilir kaynaklari takip edin
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

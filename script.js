@@ -185,7 +185,7 @@ function createMarketCardHTML(item, price, change) {
     const arrow = isUp ? '&#9650;' : '&#9660;';
 
     const flagOrIcon = item.flag
-        ? `<img src="https://flagcdn.com/28x20/${item.flag}.png" alt="${item.code}" class="market-card__flag" loading="lazy">`
+        ? `<img src="https://flagcdn.com/28x20/${item.flag}.png" alt="${item.code}" class="market-card__flag" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\\'font-weight:700;font-size:0.8rem;color:var(--color-primary-light)\\'>${item.code}</span>')">`
         : `<i class="${item.icon}" style="font-size:1.25rem;color:var(--color-primary-light);"></i>`;
 
     return `
@@ -229,7 +229,7 @@ function renderMainTable(rates) {
                 </td>
                 <td>
                     <div class="currency-cell">
-                        <img src="https://flagcdn.com/28x20/${cur.flag}.png" alt="${cur.code}" loading="lazy">
+                        <img src="https://flagcdn.com/28x20/${cur.flag}.png" alt="${cur.code}" loading="lazy" onerror="this.style.display='none'">
                         <div class="currency-cell__info">
                             <span class="currency-cell__code">${cur.code}</span>
                             <span class="currency-cell__name">${cur.name}</span>
@@ -531,7 +531,7 @@ async function loadLiveRates() {
                 </td>
                 <td>
                     <div class="currency-cell">
-                        <img src="https://flagcdn.com/28x20/${countryCode[code]}.png" alt="${code}" loading="lazy">
+                        <img src="https://flagcdn.com/28x20/${countryCode[code]}.png" alt="${code}" loading="lazy" onerror="this.style.display='none'">
                         <div class="currency-cell__info">
                             <span class="currency-cell__code">${code}</span>
                             <span class="currency-cell__name">${currencyNames[code] || code}</span>

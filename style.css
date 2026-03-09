@@ -330,6 +330,71 @@ body {
     line-height: 1;
 }
 
+/* Mobile Nav - HIDDEN by default on all screens */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-bg-white);
+    z-index: 2000;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.mobile-nav--open {
+    display: flex;
+}
+
+.mobile-nav__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.mobile-nav__close {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mobile-nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    transition: background var(--transition-fast);
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link--active {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-light);
+    text-decoration: none;
+}
+
+.mobile-nav__link i {
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
@@ -562,7 +627,11 @@ body {
 .section {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem;
+}
+
+.section + .section {
+    padding-top: 0;
 }
 
 .section__header {
@@ -617,6 +686,7 @@ body {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
+    transition: box-shadow var(--transition-base), border-color var(--transition-fast);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
     overflow: hidden;
@@ -666,12 +736,13 @@ body {
     color: var(--color-text);
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .market-card:hover {
     border-color: var(--color-primary-light);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
     text-decoration: none;
     color: var(--color-text);
 }
@@ -811,7 +882,7 @@ body {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 }
 
 .data-table-toolbar {
@@ -995,7 +1066,7 @@ body {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 }
 
 .chart-panel__header {
@@ -1004,16 +1075,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: var(--color-bg);
 }
 
 .chart-panel__title {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-lg);
     font-weight: 600;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .chart-panel__body {
-    height: 450px;
+    height: 520px;
     position: relative;
 }
 
@@ -1040,13 +1115,19 @@ body {
 
 .trust-item {
     text-align: center;
-    padding: 1rem;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    transition: background var(--transition-fast);
+}
+
+.trust-item:hover {
+    background: var(--color-bg);
 }
 
 .trust-item__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-lg);
     background: var(--color-primary-soft);
     color: var(--color-primary-light);
     display: flex;
@@ -1483,70 +1564,6 @@ body {
         display: block;
     }
 
-    /* Mobile nav overlay */
-    .mobile-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--color-bg-white);
-        z-index: 2000;
-        padding: 1rem;
-        display: none;
-        flex-direction: column;
-    }
-
-    .mobile-nav--open {
-        display: flex;
-    }
-
-    .mobile-nav__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 2rem;
-    }
-
-    .mobile-nav__close {
-        background: none;
-        border: none;
-        color: var(--color-text);
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .mobile-nav__links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .mobile-nav__link {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.875rem 1rem;
-        border-radius: var(--radius-md);
-        text-decoration: none;
-        color: var(--color-text);
-        font-size: var(--font-size-base);
-        font-weight: 500;
-        transition: background var(--transition-fast);
-    }
-
-    .mobile-nav__link:hover,
-    .mobile-nav__link--active {
-        background: var(--color-primary-soft);
-        color: var(--color-primary-light);
-    }
-
-    .mobile-nav__link i {
-        font-size: 1.25rem;
-        width: 24px;
-        text-align: center;
-    }
-
     .market-cards {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1614,8 +1631,8 @@ body {
         text-align: center;
     }
 
-    /* Canli Doviz sidebar layout */
-    [style*="grid-template-columns: 1fr 320px"] {
+    /* Responsive 2-col info grids */
+    [style*="grid-template-columns: 1fr 1fr"] {
         grid-template-columns: 1fr !important;
     }
 }
@@ -1661,9 +1678,13 @@ body {
    PAGE-SPECIFIC: Canli Doviz
    ============================================ */
 .page-header {
-    background: var(--color-bg-white);
-    border-bottom: 1px solid var(--color-border);
-    padding: 1.5rem 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    padding: 2rem 0;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .page-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 .page-header__inner {
@@ -1676,11 +1697,16 @@ body {
     font-size: var(--font-size-2xl);
     font-weight: 700;
     margin: 0 0 0.35rem;
+    color: #ffffff;
+}
+
+.page-header h1 i {
+    color: rgba(255,255,255,0.85) !important;
 }
 
 .page-header p {
     font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    color: rgba(255,255,255,0.8);
     margin: 0;
     max-width: 600px;
 }
