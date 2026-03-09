@@ -36,14 +36,17 @@ async function loadBlogPosts() {
         // Her yazı için bir kart oluştur
         posts.forEach(post => {
             const postCard = `
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">${post.title}</h5>
-                            <p class="card-text text-muted"><small>${new Date(post.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</small></p>
-                            <p class="card-text">${post.summary}</p>
-                            <a href="blog-sablonu.html?yazi=${post.slug}" class="btn btn-primary mt-auto align-self-start">Devamını Oku</a>
+                <div class="card-v2 animate-in">
+                    <div class="card-v2__body" style="display:flex;flex-direction:column;height:100%;">
+                        <div style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-bottom:0.5rem;">
+                            <i class="bi bi-calendar3"></i>
+                            ${new Date(post.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}
                         </div>
+                        <h2 style="font-size:var(--font-size-lg);font-weight:600;margin:0 0 0.75rem;">${post.title}</h2>
+                        <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:1.6;flex:1;">${post.summary}</p>
+                        <a href="blog-sablonu.html?yazi=${post.slug}" class="btn-header-cta btn-header-cta--primary" style="align-self:flex-start;margin-top:1rem;">
+                            Devamini Oku <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             `;

@@ -3,191 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hızlı Döviz Çevirici | Anlık Kur Hesaplama - Dolar, Euro, TL</title>
-    <meta name="description" content="En güncel kurlarla Dolar, Euro, Sterlin ve 150+ fazla para birimi arasında anında çeviri yapın. Canlı Döviz Kuru ile güvenilir ve hızlı döviz hesaplama aracı.">
-    <meta name="keywords" content="döviz çevirici, anlık kur çevirici, para birimi hesaplama, dolar tl çevir, euro tl çevir, güncel döviz kurları, online çevirici, kur hesapla">
+    <title>Doviz Cevirici | Anlik Kur Hesaplama - Dolar, Euro, TL</title>
+    <meta name="description" content="En guncel kurlarla Dolar, Euro, Sterlin ve 150'den fazla para birimi arasinda aninda ceviri yapin. DovizKuruCanli ile guvenilir ve hizli doviz hesaplama araci.">
+    <meta name="keywords" content="doviz cevirici, anlik kur cevirici, para birimi hesaplama, dolar tl cevir, euro tl cevir, guncel doviz kurlari">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dovizkurucanli.vercel.app/pages/doviz-cevirici.html">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../style.css">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://dovizkurucanli.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Doviz Cevirici", "item": "https://dovizkurucanli.vercel.app/pages/doviz-cevirici.html" }
+        ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Navigasyon -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <!-- Header -->
+    <header class="site-header">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <i class="bi bi-currency-exchange me-2"></i>Canlı Döviz Kuru
+            <a href="../index.html" class="site-logo">
+                <span class="site-logo__icon"><i class="bi bi-currency-exchange"></i></span>
+                DovizKuruCanli
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door"></i> Ana Sayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="doviz-cevirici.html"><i class="bi bi-calculator"></i> Döviz Çevirici</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kripto-cevirici.html"><i class="bi bi-currency-bitcoin"></i> Kripto Çevirici</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="canli-doviz.html"><i class="bi bi-graph-up"></i> Canlı Döviz</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kripto-piyasa.html"><i class="bi bi-coin"></i> Kripto Piyasa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="hakkimizda.html"><i class="bi bi-info-circle"></i> Hakkımızda</a>
-                    </li>
-                </ul>
+            <nav class="site-nav">
+                <a href="../index.html" class="site-nav__link"><i class="bi bi-house-door"></i> Ana Sayfa</a>
+                <a href="canli-doviz.html" class="site-nav__link"><i class="bi bi-graph-up-arrow"></i> Canli Doviz</a>
+                <a href="doviz-cevirici.html" class="site-nav__link site-nav__link--active"><i class="bi bi-calculator"></i> Doviz Cevirici</a>
+                <a href="kripto-piyasa.html" class="site-nav__link"><i class="bi bi-coin"></i> Kripto</a>
+                <a href="blog.html" class="site-nav__link"><i class="bi bi-journal-text"></i> Blog</a>
+                <a href="hakkimizda.html" class="site-nav__link"><i class="bi bi-info-circle"></i> Hakkimizda</a>
+            </nav>
+            <div class="header-actions">
+                <a href="kripto-cevirici.html" class="btn-header-cta btn-header-cta--outline">
+                    <i class="bi bi-currency-bitcoin"></i> Kripto Cevir
+                </a>
             </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="bi bi-list"></i>
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Ana İçerik -->
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <!-- Döviz Çevirici Kartı -->
-                <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white">
-                        <h1 class="h4 mb-0"><i class="bi bi-calculator"></i> Döviz Çevirici</h1>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text mb-4">Anlık kurları kullanarak para birimleri arasında kolayca çeviri yapın.</p>
-                        <div class="row g-3 align-items-center">
-                            <div class="col-md-5">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" id="amount" value="1" min="0" step="any">
-                                    <label for="amount">Miktar</label>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-floating">
-                                    <select class="form-select" id="fromCurrency">
-                                        <!-- JavaScript ile doldurulacak -->
-                                        <option>Yükleniyor...</option>
-                                    </select>
-                                    <label for="fromCurrency">Kaynak Para Birimi</label>
-                                </div>
-                            </div>
-                            <div class="col-md-2 text-center d-none d-md-block">
-                                <i class="bi bi-arrow-left-right fs-3 text-secondary"></i>
-                            </div>
-                             <div class="col-12 d-md-none text-center">
-                                <i class="bi bi-arrow-down-up fs-3 text-secondary my-2"></i>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-floating">
-                                    <select class="form-select" id="toCurrency">
-                                        <!-- JavaScript ile doldurulacak -->
-                                         <option>Yükleniyor...</option>
-                                    </select>
-                                    <label for="toCurrency">Hedef Para Birimi</label>
-                                </div>
-                            </div>
-                             <div class="col-md-5">
-                             </div>
-                             <div class="col-md-2 d-none d-md-block">
-                             </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav__header">
+            <a href="../index.html" class="site-logo">
+                <span class="site-logo__icon"><i class="bi bi-currency-exchange"></i></span>
+                DovizKuruCanli
+            </a>
+            <button class="mobile-nav__close" id="mobileNavClose" aria-label="Kapat">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav__links">
+            <a href="../index.html" class="mobile-nav__link"><i class="bi bi-house-door"></i> Ana Sayfa</a>
+            <a href="canli-doviz.html" class="mobile-nav__link"><i class="bi bi-graph-up-arrow"></i> Canli Doviz</a>
+            <a href="doviz-cevirici.html" class="mobile-nav__link mobile-nav__link--active"><i class="bi bi-calculator"></i> Doviz Cevirici</a>
+            <a href="kripto-cevirici.html" class="mobile-nav__link"><i class="bi bi-currency-bitcoin"></i> Kripto Cevirici</a>
+            <a href="kripto-piyasa.html" class="mobile-nav__link"><i class="bi bi-coin"></i> Kripto Piyasa</a>
+            <a href="blog.html" class="mobile-nav__link"><i class="bi bi-journal-text"></i> Blog</a>
+            <a href="hakkimizda.html" class="mobile-nav__link"><i class="bi bi-info-circle"></i> Hakkimizda</a>
+        </nav>
+    </div>
 
-                        </div>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="page-header__inner">
+            <h1><i class="bi bi-calculator" style="color:var(--color-primary-light);"></i> Doviz Cevirici</h1>
+            <p>Anlik kurlarla 150'den fazla para birimi arasinda hizli ve guvenilir cevirme islemi yapin.</p>
+        </div>
+    </div>
 
-                        <div class="result-box mt-4 text-center">
-                            <div class="alert alert-success" role="alert">
-                                <h5 class="alert-heading mb-0">Dönüşüm Sonucu</h5>
-                                <div id="result" class="display-6 mt-2 fw-bold">--</div>
-                            </div>
-                        </div>
-                        <p class="text-center text-muted mt-2"><small id="lastUpdate">Kurlar yükleniyor...</small></p>
+    <!-- Converter Card -->
+    <div class="section">
+        <div class="converter-card animate-in">
+            <div class="converter-card__header">
+                <h2 class="converter-card__title"><i class="bi bi-arrow-left-right"></i> Para Birimi Cevir</h2>
+                <p class="converter-card__subtitle">Gercek zamanli kurlarla aninda hesaplayin</p>
+            </div>
+            <div class="converter-card__body">
+                <div class="converter-field">
+                    <label for="amount">Miktar</label>
+                    <input type="number" id="amount" value="1" min="0" step="any" placeholder="Miktar girin">
+                </div>
 
-                        {/* Popüler Kurlar Tablosu (Opsiyonel, script.js'den çağrılabilir) */}
-                        <div class="mt-5 d-none">
-                            <h5 class="mb-3"><i class="bi bi-star-fill text-warning"></i> Popüler Kurlar (TRY Bazlı)</h5>
-                            <div class="table-responsive">
-                                <table class="table table-sm table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Para Birimi</th>
-                                            <th>Kur</th>
-                                            <th>Değişim</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="popularRatesTable">
-                                        <!-- JavaScript ile doldurulacak -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                <div class="converter-presets">
+                    <button class="converter-preset-btn" onclick="document.getElementById('amount').value=100;convertCurrency();">100</button>
+                    <button class="converter-preset-btn" onclick="document.getElementById('amount').value=500;convertCurrency();">500</button>
+                    <button class="converter-preset-btn" onclick="document.getElementById('amount').value=1000;convertCurrency();">1.000</button>
+                    <button class="converter-preset-btn" onclick="document.getElementById('amount').value=10000;convertCurrency();">10.000</button>
+                </div>
+
+                <div class="converter-field" style="margin-top:1.25rem;">
+                    <label for="fromCurrency">Kaynak Para Birimi</label>
+                    <select id="fromCurrency">
+                        <option>Yukleniyor...</option>
+                    </select>
+                </div>
+
+                <div class="converter-swap">
+                    <button class="converter-swap-btn" id="swapCurrencies" aria-label="Para birimlerini degistir">
+                        <i class="bi bi-arrow-down-up"></i>
+                    </button>
+                </div>
+
+                <div class="converter-field">
+                    <label for="toCurrency">Hedef Para Birimi</label>
+                    <select id="toCurrency">
+                        <option>Yukleniyor...</option>
+                    </select>
+                </div>
+
+                <div class="converter-result" id="resultBox">
+                    <div class="converter-result__value" id="result">--</div>
+                    <div class="converter-result__label" id="lastUpdate">Kurlar yukleniyor...</div>
                 </div>
             </div>
+        </div>
 
+        <!-- Popular Conversions -->
+        <div class="popular-conversions animate-in">
+            <h3 class="popular-conversions__title"><i class="bi bi-star-fill" style="color:var(--color-warning);"></i> Populer Donusumler</h3>
+            <div class="popular-conversions__grid" id="popularConversions">
+                <div class="popular-conversion-item" onclick="setConversion('USD','TRY',1)">
+                    <span class="popular-conversion-item__label">1 Dolar kac TL?</span>
+                    <span class="popular-conversion-item__value" id="pop_usd_1">--</span>
+                </div>
+                <div class="popular-conversion-item" onclick="setConversion('USD','TRY',100)">
+                    <span class="popular-conversion-item__label">100 Dolar kac TL?</span>
+                    <span class="popular-conversion-item__value" id="pop_usd_100">--</span>
+                </div>
+                <div class="popular-conversion-item" onclick="setConversion('EUR','TRY',1)">
+                    <span class="popular-conversion-item__label">1 Euro kac TL?</span>
+                    <span class="popular-conversion-item__value" id="pop_eur_1">--</span>
+                </div>
+                <div class="popular-conversion-item" onclick="setConversion('EUR','TRY',100)">
+                    <span class="popular-conversion-item__label">100 Euro kac TL?</span>
+                    <span class="popular-conversion-item__value" id="pop_eur_100">--</span>
+                </div>
+                <div class="popular-conversion-item" onclick="setConversion('GBP','TRY',1)">
+                    <span class="popular-conversion-item__label">1 Sterlin kac TL?</span>
+                    <span class="popular-conversion-item__value" id="pop_gbp_1">--</span>
+                </div>
+                <div class="popular-conversion-item" onclick="setConversion('GBP','TRY',100)">
+                    <span class="popular-conversion-item__label">100 Sterlin kac TL?</span>
+                    <span class="popular-conversion-item__value" id="pop_gbp_100">--</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Canlı Döviz Kuru</h5>
-                    <p>Güncel döviz ve kripto para bilgileri için güvenilir kaynağınız.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Hızlı Bağlantılar</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="doviz-cevirici.html">Döviz Çevirici</a></li>
-                        <li><a href="kripto-cevirici.html">Kripto Çevirici</a></li>
-                        <li><a href="canli-doviz.html">Canlı Döviz</a></li>
-                        <li><a href="kripto-piyasa.html">Kripto Piyasa</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h5>İletişim</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
-                    </ul>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-brand__name"><i class="bi bi-currency-exchange"></i> DovizKuruCanli</div>
+                <p class="footer-brand__desc">Guncel doviz kurlari, kripto para fiyatlari ve hizli cevirici araclari sunan guvenilir finans platformu.</p>
             </div>
-            <hr class="mt-4">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 Canlı Döviz Kuru Projesi. İrony Agency Tüm hakları saklıdır.</p>
+            <div class="footer-col">
+                <h4 class="footer-col__title">Sayfalar</h4>
+                <ul>
+                    <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="canli-doviz.html">Canli Doviz</a></li>
+                    <li><a href="kripto-piyasa.html">Kripto Piyasa</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-col__title">Araclar</h4>
+                <ul>
+                    <li><a href="doviz-cevirici.html">Doviz Cevirici</a></li>
+                    <li><a href="kripto-cevirici.html">Kripto Cevirici</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col__title">Bilgi</h4>
+                <ul>
+                    <li><a href="hakkimizda.html">Hakkimizda</a></li>
+                    <li><a href="gizlilik-politikasi.html">Gizlilik Politikasi</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-bottom__text">&copy; 2025 DovizKuruCanli. Irony Agency, tum haklari saklidir.</p>
+            <p class="footer-bottom__disclaimer">Bu sitede yer alan veriler yalnizca bilgilendirme amaciyla sunulmaktadir.</p>
         </div>
     </footer>
 
-     <!-- Tema Değiştirme Butonu -->
-    <button class="theme-toggle" id="themeToggle">
+    <button class="theme-toggle" id="themeToggle" aria-label="Tema degistir">
         <i class="bi bi-moon-stars"></i>
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../script.js"></script>
     <script>
-        // Sayfa yüklendiğinde para birimi seçeneklerini ve gerekirse popüler kurları yükle
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof loadCurrencyOptions === 'function') {
-                loadCurrencyOptions(); // script.js içindeki fonksiyonu çağır
-            }
-             // İsteğe bağlı: Popüler kurları da bu sayfada göstermek isterseniz
-            // if (typeof loadPopularRates === 'function') {
-            //     loadPopularRates();
-            //     document.querySelector('.mt-5.d-none')?.classList.remove('d-none'); // Tabloyu görünür yap
-            // }
+        // Swap button
+        document.getElementById('swapCurrencies')?.addEventListener('click', () => {
+            const from = document.getElementById('fromCurrency');
+            const to = document.getElementById('toCurrency');
+            const temp = from.value;
+            from.value = to.value;
+            to.value = temp;
+            convertCurrency();
+        });
 
-            // İlk çeviriyi yap (varsayılan değerlerle)
-             if (typeof convertCurrency === 'function') {
-                 // Seçeneklerin yüklenmesini beklemek için küçük bir gecikme
-                 setTimeout(convertCurrency, 500);
-             }
+        // Auto convert on change
+        document.getElementById('amount')?.addEventListener('input', convertCurrency);
+        document.getElementById('fromCurrency')?.addEventListener('change', convertCurrency);
+        document.getElementById('toCurrency')?.addEventListener('change', convertCurrency);
+
+        // Set conversion from popular item
+        function setConversion(from, to, amount) {
+            document.getElementById('fromCurrency').value = from;
+            document.getElementById('toCurrency').value = to;
+            document.getElementById('amount').value = amount;
+            convertCurrency();
+        }
+
+        // Load popular conversion values
+        async function loadPopularValues() {
+            try {
+                const [usdRes, eurRes, gbpRes] = await Promise.all([
+                    fetch('https://api.exchangerate-api.com/v4/latest/USD'),
+                    fetch('https://api.exchangerate-api.com/v4/latest/EUR'),
+                    fetch('https://api.exchangerate-api.com/v4/latest/GBP')
+                ]);
+                const [usdData, eurData, gbpData] = await Promise.all([usdRes.json(), eurRes.json(), gbpRes.json()]);
+
+                const usdTry = usdData.rates.TRY;
+                const eurTry = eurData.rates.TRY;
+                const gbpTry = gbpData.rates.TRY;
+
+                const fmt = (v) => parseFloat(v).toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+                document.getElementById('pop_usd_1').textContent = fmt(usdTry) + ' TL';
+                document.getElementById('pop_usd_100').textContent = fmt(usdTry * 100) + ' TL';
+                document.getElementById('pop_eur_1').textContent = fmt(eurTry) + ' TL';
+                document.getElementById('pop_eur_100').textContent = fmt(eurTry * 100) + ' TL';
+                document.getElementById('pop_gbp_1').textContent = fmt(gbpTry) + ' TL';
+                document.getElementById('pop_gbp_100').textContent = fmt(gbpTry * 100) + ' TL';
+            } catch (e) {
+                console.error('Populer degerler yuklenirken hata:', e);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCurrencyOptions().then(() => {
+                setTimeout(convertCurrency, 300);
+            });
+            loadPopularValues();
         });
     </script>
 </body>

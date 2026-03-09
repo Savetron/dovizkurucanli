@@ -7,241 +7,429 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-Z0C76HSPTJ');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="En güncel canlı döviz kurları, anlık dolar, euro, sterlin fiyatları ve 100'den fazla kripto para değerini takip edin. Hızlı ve kolay döviz çevirici ve kripto para hesaplama aracı.">
-    <meta name="keywords" content="canlı döviz, anlık döviz, dolar kuru, euro kuru, bitcoin fiyatı, ethereum fiyatı, kripto para çevirici, döviz hesaplama, güncel kur">
-    <meta name="author" content="Finans Platformu">
+    <meta name="description" content="Canli doviz kurlari, anlik dolar, euro, sterlin fiyatlari ve 100'den fazla kripto para degerini takip edin. Hizli doviz cevirici ve kripto para hesaplama araci.">
+    <meta name="keywords" content="canli doviz, anlik doviz, dolar kuru, euro kuru, bitcoin fiyati, ethereum fiyati, kripto para cevirici, doviz hesaplama, guncel kur">
+    <meta name="author" content="DovizKuruCanli">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://candovizkuru.com/">
-    <meta property="og:title" content="Canlı Döviz Kuru | Anlık Dolar, Euro, Kripto Fiyatları ve Çevirici">
-    <meta property="og:description" content="En güncel canlı döviz kurları, anlık dolar, euro, sterlin fiyatları ve 100'den fazla kripto para değerini takip edin. Hızlı ve kolay döviz çevirici ve kripto para hesaplama aracı.">
-    <meta property="og:image" content="https://candovizkuru.com/og-image.jpg">
+    <meta property="og:url" content="https://dovizkurucanli.vercel.app/">
+    <meta property="og:title" content="Canli Doviz Kuru | Anlik Dolar, Euro, Kripto Fiyatlari ve Cevirici">
+    <meta property="og:description" content="Canli doviz kurlari, anlik dolar, euro, sterlin fiyatlari ve kripto para degerlerini takip edin. Hizli doviz cevirici ve hesaplama araci.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://candovizkuru.com/">
-    <meta property="twitter:title" content="Canlı Döviz Kuru | Anlık Dolar, Euro, Kripto Fiyatları ve Çevirici">
-    <meta property="twitter:description" content="En güncel canlı döviz kurları, anlık dolar, euro, sterlin fiyatları ve 100'den fazla kripto para değerini takip edin. Hızlı ve kolay döviz çevirici ve kripto para hesaplama aracı.">
-    <meta property="twitter:image" content="https://candovizkuru.com/twitter-image.jpg">
+    <meta property="twitter:title" content="Canli Doviz Kuru | Anlik Dolar, Euro, Kripto Fiyatlari ve Cevirici">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://candovizkuru.com/">
+    <link rel="canonical" href="https://dovizkurucanli.vercel.app/">
 
     <meta name="google-adsense-account" content="ca-pub-8020765633962496">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8020765633962496"
-     crossorigin="anonymous"></script>
-    <title>Canlı Döviz Kuru | Anlık Dolar, Euro, Kripto Fiyatları ve Çevirici</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8020765633962496" crossorigin="anonymous"></script>
+
+    <title>Canli Doviz Kuru | Anlik Dolar, Euro, Kripto Fiyatlari ve Cevirici</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "DovizKuruCanli",
+        "url": "https://dovizkurucanli.vercel.app",
+        "description": "Canli doviz kurlari, kripto para fiyatlari ve hizli cevirici araclari",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://dovizkurucanli.vercel.app/pages/canli-doviz.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DovizKuruCanli",
+        "url": "https://dovizkurucanli.vercel.app",
+        "logo": "https://dovizkurucanli.vercel.app/favicon.png"
+    }
+    </script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <!-- Ticker Bar -->
+    <div class="ticker-bar" id="tickerBar">
+        <div class="ticker-bar__inner" id="tickerContent">
+            <!-- JS ile doldurulacak -->
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="bi bi-currency-exchange me-2"></i>Canlı Döviz Kuru
+            <a href="index.html" class="site-logo">
+                <span class="site-logo__icon"><i class="bi bi-currency-exchange"></i></span>
+                DovizKuruCanli
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+
+            <nav class="site-nav" id="siteNav">
+                <a href="index.html" class="site-nav__link site-nav__link--active">
+                    <i class="bi bi-house-door"></i> Ana Sayfa
+                </a>
+                <a href="pages/canli-doviz.html" class="site-nav__link">
+                    <i class="bi bi-graph-up-arrow"></i> Canli Doviz
+                </a>
+                <a href="pages/doviz-cevirici.html" class="site-nav__link">
+                    <i class="bi bi-calculator"></i> Doviz Cevirici
+                </a>
+                <a href="pages/kripto-piyasa.html" class="site-nav__link">
+                    <i class="bi bi-coin"></i> Kripto
+                </a>
+                <a href="pages/blog.html" class="site-nav__link">
+                    <i class="bi bi-journal-text"></i> Blog
+                </a>
+                <a href="pages/hakkimizda.html" class="site-nav__link">
+                    <i class="bi bi-info-circle"></i> Hakkimizda
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="pages/doviz-cevirici.html" class="btn-header-cta btn-header-cta--primary">
+                    <i class="bi bi-arrow-left-right"></i> Hizli Cevir
+                </a>
+                <a href="pages/kripto-cevirici.html" class="btn-header-cta btn-header-cta--outline">
+                    <i class="bi bi-currency-bitcoin"></i> Kripto Cevir
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <i class="bi bi-list"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            <i class="bi bi-house-door"></i> Ana Sayfa
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/doviz-cevirici.html">
-                            <i class="bi bi-calculator"></i> Döviz Çevirici
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/kripto-cevirici.html">
-                            <i class="bi bi-currency-bitcoin"></i> Kripto Çevirici
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/canli-doviz.html">
-                            <i class="bi bi-graph-up"></i> Canlı Döviz
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/kripto-piyasa.html">
-                            <i class="bi bi-coin"></i> Kripto Piyasa
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/blog.html">
-                            <i class="bi bi-pencil-square"></i> Blog
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/hakkimizda.html">
-                            <i class="bi bi-info-circle"></i> Hakkımızda
-                        </a>
-                    </li>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav__header">
+            <a href="index.html" class="site-logo">
+                <span class="site-logo__icon"><i class="bi bi-currency-exchange"></i></span>
+                DovizKuruCanli
+            </a>
+            <button class="mobile-nav__close" id="mobileNavClose" aria-label="Kapat">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav__links">
+            <a href="index.html" class="mobile-nav__link mobile-nav__link--active">
+                <i class="bi bi-house-door"></i> Ana Sayfa
+            </a>
+            <a href="pages/canli-doviz.html" class="mobile-nav__link">
+                <i class="bi bi-graph-up-arrow"></i> Canli Doviz
+            </a>
+            <a href="pages/doviz-cevirici.html" class="mobile-nav__link">
+                <i class="bi bi-calculator"></i> Doviz Cevirici
+            </a>
+            <a href="pages/kripto-cevirici.html" class="mobile-nav__link">
+                <i class="bi bi-currency-bitcoin"></i> Kripto Cevirici
+            </a>
+            <a href="pages/kripto-piyasa.html" class="mobile-nav__link">
+                <i class="bi bi-coin"></i> Kripto Piyasa
+            </a>
+            <a href="pages/blog.html" class="mobile-nav__link">
+                <i class="bi bi-journal-text"></i> Blog
+            </a>
+            <a href="pages/hakkimizda.html" class="mobile-nav__link">
+                <i class="bi bi-info-circle"></i> Hakkimizda
+            </a>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero__grid">
+            <div class="hero__content">
+                <h1 class="hero__title">Canli doviz kurlari, kripto fiyatlari ve hizli cevirici araclari</h1>
+                <p class="hero__subtitle">Anlik verileri takip edin, para birimlerini cevirin, piyasa hareketlerini tek ekranda gorun. Turkiye'nin hizli ve guvenilir finans veri platformu.</p>
+                <div class="hero__badges">
+                    <span class="hero__badge"><i class="bi bi-lightning-charge-fill"></i> Anlik Veri</span>
+                    <span class="hero__badge"><i class="bi bi-arrow-left-right"></i> Hizli Cevirici</span>
+                    <span class="hero__badge"><i class="bi bi-phone"></i> Mobil Uyumlu</span>
+                </div>
+                <div class="hero__actions">
+                    <a href="pages/canli-doviz.html" class="btn-hero btn-hero--primary">
+                        <i class="bi bi-graph-up-arrow"></i> Canli Kurlari Gor
+                    </a>
+                    <a href="pages/doviz-cevirici.html" class="btn-hero btn-hero--secondary">
+                        <i class="bi bi-calculator"></i> Doviz Cevir
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__widget">
+                <div class="hero-converter">
+                    <div class="hero-converter__title">
+                        <i class="bi bi-arrow-left-right"></i> Hizli Doviz Cevirici
+                    </div>
+                    <div class="form-group">
+                        <label>Miktar</label>
+                        <input type="number" id="heroAmount" value="1" min="0" step="any" placeholder="Miktar girin">
+                    </div>
+                    <div class="form-group">
+                        <label>Kaynak</label>
+                        <select id="heroFrom">
+                            <option value="USD" selected>USD - Amerikan Dolari</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - Ingiliz Sterlini</option>
+                            <option value="CHF">CHF - Isvicre Frangi</option>
+                        </select>
+                    </div>
+                    <div class="hero-converter__swap">
+                        <button class="hero-converter__swap-btn" id="heroSwapBtn" aria-label="Ters cevir">
+                            <i class="bi bi-arrow-down-up"></i>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label>Hedef</label>
+                        <select id="heroTo">
+                            <option value="TRY" selected>TRY - Turk Lirasi</option>
+                            <option value="USD">USD - Amerikan Dolari</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - Ingiliz Sterlini</option>
+                        </select>
+                    </div>
+                    <div class="hero-converter__result" id="heroResult">
+                        <div class="hero-converter__result-value">--</div>
+                        <div class="hero-converter__result-label">Sonuc hesaplaniyor...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Market Cards -->
+    <section class="section animate-in">
+        <div class="section__header">
+            <div>
+                <h2 class="section__title"><i class="bi bi-bar-chart-line"></i> One Cikan Piyasalar</h2>
+                <p class="section__subtitle">En cok takip edilen doviz ve kripto pariteler</p>
+            </div>
+            <a href="pages/canli-doviz.html" class="section__link">
+                Tum kurlari gor <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <div class="market-cards" id="marketCards">
+            <!-- JS ile doldurulacak, skeleton gosteriliyor -->
+            <div class="market-card"><div class="skeleton skeleton-card"></div></div>
+            <div class="market-card"><div class="skeleton skeleton-card"></div></div>
+            <div class="market-card"><div class="skeleton skeleton-card"></div></div>
+            <div class="market-card"><div class="skeleton skeleton-card"></div></div>
+            <div class="market-card"><div class="skeleton skeleton-card"></div></div>
+            <div class="market-card"><div class="skeleton skeleton-card"></div></div>
+        </div>
+    </section>
+
+    <!-- Quick Tools -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section__header">
+            <h2 class="section__title"><i class="bi bi-tools"></i> Hizli Araclar</h2>
+        </div>
+        <div class="quick-tools">
+            <a href="pages/doviz-cevirici.html" class="quick-tool">
+                <div class="quick-tool__icon quick-tool__icon--blue">
+                    <i class="bi bi-calculator"></i>
+                </div>
+                <div class="quick-tool__content">
+                    <h3>Doviz Cevirici</h3>
+                    <p>150'den fazla para birimi arasinda anlik doviz cevirisi yapin.</p>
+                </div>
+            </a>
+            <a href="pages/kripto-cevirici.html" class="quick-tool">
+                <div class="quick-tool__icon quick-tool__icon--orange">
+                    <i class="bi bi-currency-bitcoin"></i>
+                </div>
+                <div class="quick-tool__content">
+                    <h3>Kripto Cevirici</h3>
+                    <p>Bitcoin, Ethereum ve diger kripto paralari aninda cevirin.</p>
+                </div>
+            </a>
+            <a href="pages/canli-doviz.html" class="quick-tool">
+                <div class="quick-tool__icon quick-tool__icon--green">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div class="quick-tool__content">
+                    <h3>Canli Grafikler</h3>
+                    <p>TradingView grafikleri ile detayli piyasa analizi yapin.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Live Rates Table -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section__header">
+            <div>
+                <h2 class="section__title"><i class="bi bi-table"></i> Canli Doviz Tablosu</h2>
+                <p class="section__subtitle">Turk Lirasi karsisindaki guncel doviz kurlari</p>
+            </div>
+            <div class="last-update-badge" id="lastUpdateBadge">
+                <span class="pulse-dot"></span>
+                <span id="lastUpdate">Guncelleniyor...</span>
+            </div>
+        </div>
+
+        <div class="data-table-wrapper">
+            <div class="data-table-toolbar">
+                <div class="data-table-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="tableSearch" placeholder="Para birimi ara...">
+                </div>
+                <div class="data-table-info">
+                    <span class="pulse-dot"></span>
+                    Canli veri
+                </div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="data-table" id="mainTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Para Birimi</th>
+                            <th>Alis (TL)</th>
+                            <th>Satis (TL)</th>
+                            <th>Degisim</th>
+                            <th>Guncelleme</th>
+                        </tr>
+                    </thead>
+                    <tbody id="popularRatesTable">
+                        <tr><td colspan="6" style="text-align:center;padding:2rem;">
+                            <div class="skeleton skeleton-text--lg" style="margin:0 auto;"></div>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- TradingView Chart -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section__header">
+            <h2 class="section__title"><i class="bi bi-graph-up"></i> Piyasa Analizi</h2>
+        </div>
+        <div class="chart-panel">
+            <div class="chart-panel__header">
+                <h3 class="chart-panel__title">USD/TRY Grafigi</h3>
+            </div>
+            <div class="chart-panel__body" id="tradingview_chart"></div>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            if (document.getElementById('tradingview_chart')) {
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": "FX:USDTRY",
+                    "interval": "D",
+                    "timezone": "Europe/Istanbul",
+                    "theme": localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
+                    "style": "1",
+                    "locale": "tr",
+                    "toolbar_bg": "#f8fafc",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_chart"
+                });
+            }
+        </script>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="section">
+            <div class="section__header" style="justify-content:center;text-align:center;">
+                <div>
+                    <h2 class="section__title" style="justify-content:center;">Neden DovizKuruCanli?</h2>
+                    <p class="section__subtitle">Guvenilir veri, hizli erisim, modern deneyim</p>
+                </div>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-item__icon"><i class="bi bi-lightning-charge"></i></div>
+                    <h3 class="trust-item__title">Anlik Guncelleme</h3>
+                    <p class="trust-item__desc">Doviz ve kripto verileri dakika dakika guncellenir.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item__icon"><i class="bi bi-shield-check"></i></div>
+                    <h3 class="trust-item__title">Guvenilir Kaynaklar</h3>
+                    <p class="trust-item__desc">Veriler dogrudan global finans API'lerinden cekilir.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item__icon"><i class="bi bi-phone"></i></div>
+                    <h3 class="trust-item__title">Mobil Uyumlu</h3>
+                    <p class="trust-item__desc">Her cihazda kusursuz calisir; telefon, tablet veya masaustu.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item__icon"><i class="bi bi-gift"></i></div>
+                    <h3 class="trust-item__title">Tamamen Ucretsiz</h3>
+                    <p class="trust-item__desc">Tum araclar ve veriler ucretsiz olarak sunulur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-brand__name">
+                    <i class="bi bi-currency-exchange"></i> DovizKuruCanli
+                </div>
+                <p class="footer-brand__desc">Guncel doviz kurlari, kripto para fiyatlari ve hizli cevirici araclari sunan guvenilir finans platformu.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col__title">Sayfalar</h4>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="pages/canli-doviz.html">Canli Doviz</a></li>
+                    <li><a href="pages/kripto-piyasa.html">Kripto Piyasa</a></li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col__title">Araclar</h4>
+                <ul>
+                    <li><a href="pages/doviz-cevirici.html">Doviz Cevirici</a></li>
+                    <li><a href="pages/kripto-cevirici.html">Kripto Cevirici</a></li>
+                    <li><a href="pages/canli-doviz.html">Canli Grafikler</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col__title">Bilgi</h4>
+                <ul>
+                    <li><a href="pages/hakkimizda.html">Hakkimizda</a></li>
+                    <li><a href="pages/gizlilik-politikasi.html">Gizlilik Politikasi</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="hero-section text-center py-5 bg-primary text-white">
-        <div class="container">
-            <h1 class="display-4 mb-3">Finans Dünyasına Hoş Geldiniz</h1>
-            <p class="lead mb-4">Canlı döviz kurları, kripto para çevirici ve daha fazlası...</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="pages/doviz-cevirici.html" class="btn btn-light btn-lg">
-                    <i class="bi bi-calculator"></i> Döviz Çevirici
-                </a>
-                <a href="pages/kripto-cevirici.html" class="btn btn-warning btn-lg">
-                    <i class="bi bi-currency-bitcoin"></i> Kripto Çevirici
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Ana İçerik -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Güncel Döviz Kurları</h2>
-                        <p class="card-text">Türkiye'deki güncel döviz kurlarını anlık olarak takip edin. Dolar, Euro ve diğer para birimlerinin TL karşılıklarını görüntüleyin.</p>
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Para Birimi</th>
-                                        <th>Kur</th>
-                                        <th>Değişim</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="popularRatesTable">
-                                    <!-- Burası JavaScript ile doldurulacak -->
-                                </tbody>
-                            </table>
-                        </div>
-                        <small id="lastUpdate" class="text-muted">Son Güncelleme: ...</small>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Piyasa Analizi</h2>
-                        <p class="card-text">Güncel piyasa analizleri ve döviz kurlarındaki son değişimler hakkında detaylı bilgiler.</p>
-                        <div class="tradingview-widget-container">
-                            <div id="tradingview_chart"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                            <script type="text/javascript">
-                                new TradingView.widget({
-                                    "width": "100%",
-                                    "height": 500,
-                                    "symbol": "FX:USDTRY",
-                                    "interval": "D",
-                                    "timezone": "Europe/Istanbul",
-                                    "theme": "light",
-                                    "style": "1",
-                                    "locale": "tr",
-                                    "toolbar_bg": "#f1f3f6",
-                                    "enable_publishing": false,
-                                    "allow_symbol_change": true,
-                                    "container_id": "tradingview_chart"
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="card-title">Döviz Çevirici</h3>
-                        <p class="card-text">Hızlı ve kolay döviz çevirimi yapın. Tüm para birimleri arasında anlık dönüşüm yapabilirsiniz.</p>
-                        <div class="d-grid">
-                            <a href="pages/canli-doviz.html" class="btn btn-primary">Döviz Çevirici</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="card-title">Kripto Para Piyasası</h3>
-                        <p class="card-text">Bitcoin, Ethereum ve diğer kripto paraların güncel fiyatlarını ve piyasa verilerini takip edin.</p>
-                        <div class="d-grid">
-                            <a href="pages/kripto-piyasa.html" class="btn btn-primary">Kripto Piyasa</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Neden Canlı Döviz Kuru?</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">✓ Anlık ve güncel döviz kurları</li>
-                            <li class="mb-2">✓ Güvenilir veri kaynakları</li>
-                            <li class="mb-2">✓ Kullanıcı dostu arayüz</li>
-                            <li class="mb-2">✓ Ücretsiz hizmet</li>
-                            <li class="mb-2">✓ Mobil uyumlu tasarım</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Canlı Döviz Kuru</h5>
-                    <p>Güncel döviz ve kripto para bilgileri için güvenilir kaynağınız.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Hızlı Bağlantılar</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="pages/doviz-cevirici.html">Döviz Çevirici</a></li>
-                        <li><a href="pages/kripto-cevirici.html">Kripto Çevirici</a></li>
-                        <li><a href="pages/canli-doviz.html">Canlı Döviz</a></li>
-                        <li><a href="pages/kripto-piyasa.html">Kripto Piyasa</a></li>
-                        <li><a href="pages/blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h5>İletişim</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="pages/hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="pages/gizlilik-politikasi.html">Gizlilik Politikası</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-4">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 Canlı Döviz Kuru Projesi. İrony Agency Tüm hakları saklıdır.</p>
-            </div>
+        <div class="footer-bottom">
+            <p class="footer-bottom__text">&copy; 2025 DovizKuruCanli. Irony Agency, tum haklari saklidir.</p>
+            <p class="footer-bottom__disclaimer">Bu sitede yer alan veriler yalnizca bilgilendirme amaciyla sunulmaktadir. Yatirim tavsiyesi degildir.</p>
         </div>
     </footer>
 
-    <!-- Tema Değiştirme Butonu -->
-    <button class="theme-toggle" id="themeToggle">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Tema degistir">
         <i class="bi bi-moon-stars"></i>
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
