@@ -128,10 +128,11 @@
             </div>
         </div>
 
-        <!-- Chart - Full width below table -->
+        <!-- Chart -->
         <div class="chart-panel animate-in" style="margin-top:1.5rem;">
             <div class="chart-panel__header">
-                <h2 class="chart-panel__title"><i class="bi bi-graph-up" style="color:var(--color-primary-light);"></i> USD/TRY Grafigi</h2>
+                <h3 class="chart-panel__title"><i class="bi bi-graph-up"></i> USD/TRY Canli Grafik</h3>
+                <span style="font-size:var(--font-size-xs);color:var(--color-text-muted);">TradingView</span>
             </div>
             <div class="chart-panel__body" id="tradingview_doviz"></div>
         </div>
@@ -139,8 +140,7 @@
         <script type="text/javascript">
             if (document.getElementById('tradingview_doviz')) {
                 new TradingView.widget({
-                    "width": "100%",
-                    "height": "100%",
+                    "autosize": true,
                     "symbol": "FX:USDTRY",
                     "interval": "D",
                     "timezone": "Europe/Istanbul",
